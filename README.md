@@ -1,2 +1,2 @@
-# Introduction
+# What is Yjs
 

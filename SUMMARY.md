@@ -1,10 +1,10 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [What is Yjs](README.md)
 * [Yjs in the Wild](yjs-in-the-wild.md)
 * [License ❤️](license.md)
 
-## Getting Started
+## 🚲 Getting Started
 
 * [A Collaborative Editor](getting-started/a-collaborative-editor.md)
 * [Awareness & Presence](getting-started/adding-awareness.md)
@@ -13,7 +13,7 @@
   * [Food for Thought](getting-started/allowing-offline-editing/food-for-thought.md)
 * [Storing Document Content](getting-started/storing-document-content.md)
 
-## Yjs Ecosystem
+## 🔥 Yjs Ecosystem
 
 * [About](yjs-ecosystem/about.md)
 * [Editor Bindings](yjs-ecosystem/editor-bindings/README.md)
@@ -33,7 +33,7 @@
 * [Other](yjs-ecosystem/other/README.md)
   * [y-protocols](yjs-ecosystem/other/y-protocols.md)
 
-## API
+## 🔧 API
 
 * [Y.Doc](api/y.doc.md)
 * [Shared Types](api/shared-types/README.md)
@@ -50,7 +50,7 @@
   * [Presence Example](api/about-awareness/presence-example.md)
 * [Garbage Collection](api/garbage-collection.md)
 
-## Tutorials
+## 🧪 Tutorials
 
 * [Persisting the Document to a Central Database](tutorials/persisting-the-document-to-a-central-database.md)
 * [Custom Provider](tutorials/creating-a-custom-provider.md)
@@ -58,7 +58,7 @@
 * [Lessons Learned](tutorials/lessons-learned.md)
 * [Untitled](tutorials/untitled.md)
 
-## Other Resources
+## 🌎 External Resources <a id="other-resources"></a>
 
 * [Talks and Podcasts](other-resources/talks-and-podcasts.md)
 * [About CRDTs](https://crdt.tech/)
@@ -66,5 +66,4 @@
 * [Yjs Discussion Board](https://discuss.yjs.dev/)
 * [Yjs Chat](https://gitter.im/Yjs/community)
 * [Awesome People ⭐](https://github.com/yjs/yjs/stargazers)
-* [My Favorite Pleople ❤️](https://github.com/sponsors/dmonad)
 
