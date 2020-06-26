@@ -56,11 +56,10 @@
 * [Custom Provider](tutorials/creating-a-custom-provider.md)
 * [Indefinite Scaling with y-redis](tutorials/untitled-3.md)
 * [Lessons Learned](tutorials/lessons-learned.md)
-* [Untitled](tutorials/untitled.md)
 
 ## 🌎 External Resources <a id="other-resources"></a>
 
-* [Talks and Podcasts](other-resources/talks-and-podcasts.md)
+* [Talks, Podcasts, and Blog](other-resources/talks-and-podcasts.md)
 * [About CRDTs](https://crdt.tech/)
 * [CRDT Benchmarks](https://github.com/dmonad/crdt-benchmarks)
 * [Yjs Discussion Board](https://discuss.yjs.dev/)
