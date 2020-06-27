@@ -134,9 +134,7 @@ You can sync one document through different rooms. For example, to simulate fork
 
 By connecting Yjs with providers and editor bindings we created our first collaborative editor. In the following getting started sections we will explore more Yjs concepts like awareness, shared types, and offline editing.
 
-But for now, let's enjoy what we built. I included the same fiddle twice so you can see the editors sync.
-
-
+But for now, let's enjoy what we built. I included the same fiddle twice so you can observe the editors sync in real-time. Aware, the editor content is synced with all users visiting this page!
 
 {% embed url="https://jsfiddle.net/dmonad/gh7jm6y5/" %}
 
