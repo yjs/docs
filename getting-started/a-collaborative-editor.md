@@ -4,10 +4,10 @@ description: A five minute guide to make an editor collaborative
 
 # A Collaborative Editor
 
-Yjs is a modular framework for making things collaborative - like editors!
+Yjs is a modular framework for syncing things in real-time - like editors!
 
 {% hint style="info" %}
-If you are impatient jump to the demo at the bottom of the page😉 
+If you are impatient jump to the live demo at the bottom of the page😉 
 {% endhint %}
 
 First, let's decide on an editor to use. There are tons of awesome open-source editors and Yjs supports many of them. 
@@ -128,7 +128,7 @@ Providers work similarly to editor bindings. They sync Yjs documents through a  
 **Providers are meshable.** You can connect several providers to a Yjs document. [\(See Tutorial\)](https://jsfiddle.net/dmonad/gh7jm6y5/7/)
 {% endhint %}
 
-By combining Yjs with providers and editor bindings we created our first collaborative editor. In the following sections we will explore more Yjs concepts like awareness, shared types, and offline editing.
+By combining Yjs with providers and editor bindings we created our first collaborative editor. In the following sections, we will explore more Yjs concepts like awareness, shared types, and offline editing.
 
 But for now, let's enjoy what we built. I included the same fiddle twice so you can observe the editors sync in real-time. Aware, the editor content is synced with all users visiting this page!
 
