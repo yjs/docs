@@ -78,11 +78,11 @@ const binding = new QuillBinding(quill, ytext)
 
 The `ytext` type is a shared data type that holds text data and supports formatting attributes \(i.e. **bold** and _italic_\). Yjs automatically resolves concurrent changes on shared types so we don't have to worry about conflict resolution anymore. Then we synchronize the `ytext` type with the `quill` editor and keep them in-sync using the [y-quill](../yjs-ecosystem/editor-bindings/yjs-quilljs.md) binding. Almost all editor bindings work like this. So you can simply exchange the editor binding if you choose to use another editor.
 
-But don't stop here, the editor doesn't sync yet to other clients! We need to connect to other peers using a **provider** or [implement our own communication protocol](../tutorials/creating-a-custom-provider.md) to exchange document updates.
+But don't stop here, the editor doesn't sync yet to other clients! We need to choose a **provider** or [implement our own communication protocol](../tutorials/creating-a-custom-provider.md) to exchange document updates with other peers.
 
 {% page-ref page="../yjs-ecosystem/connection-provider/" %}
 
-The[ y-webrtc](../yjs-ecosystem/connection-provider/y-webrtc.md) provider connects clients directly with each other and is a perfect choice for demo applications because it doesn't require you to setup a server.  
+Each provider has pros and conns. The[ y-webrtc](../yjs-ecosystem/connection-provider/y-webrtc.md) provider connects clients directly with each other and is a perfect choice for demo applications because it doesn't require you to set up a server.  But for a real-world application, you often want to sync the document to a server. In any case, it is easy to change the provider because they all implement the same interface.
 
 {% tabs %}
 {% tab title="y-webrtc" %}
@@ -122,17 +122,13 @@ npm i y-dat
 {% endtab %}
 {% endtabs %}
 
-The providers work similarly to editor bindings. They sync Yjs documents, for example through a  communication protocol or a database. All providers have in common that they use the concept of room-names to connect Yjs documents. In the above example, all documents that specify `'quill-demo-room'` as the room-name will sync.
+Providers work similarly to editor bindings. They sync Yjs documents through a  communication protocol or a database. All providers have in common that they use the concept of room-names to connect Yjs documents. In the above example, all documents that specify `'quill-demo-room'` as the room-name will sync.
 
 {% hint style="info" %}
-**Providers are meshable.**
-
-You can connect several providers to the Yjs document at the same time. [\(See Tutorial\)](https://jsfiddle.net/dmonad/gh7jm6y5/7/)  
-  
-You can sync one document through different rooms. For example, to simulate forking behavior.
+**Providers are meshable.** You can connect several providers to a Yjs document. [\(See Tutorial\)](https://jsfiddle.net/dmonad/gh7jm6y5/7/)
 {% endhint %}
 
-By connecting Yjs with providers and editor bindings we created our first collaborative editor. In the following getting started sections we will explore more Yjs concepts like awareness, shared types, and offline editing.
+By combining Yjs with providers and editor bindings we created our first collaborative editor. In the following sections we will explore more Yjs concepts like awareness, shared types, and offline editing.
 
 But for now, let's enjoy what we built. I included the same fiddle twice so you can observe the editors sync in real-time. Aware, the editor content is synced with all users visiting this page!
 
