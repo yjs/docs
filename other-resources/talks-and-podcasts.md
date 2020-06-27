@@ -62,6 +62,12 @@ description: Yjs related resources in chronological order
 
 {% embed url="https://www.tag1consulting.com/blog/yjs-indexeddb-TTT-009" %}
 
+### February 2, 2020 - Talk at FOSDEM
+
+{% embed url="https://fosdem.org/2020/schedule/event/yjs\_shared\_editing/" %}
+
+{% embed url="https://video.fosdem.org/2020/H.2215/yjs\_shared\_editing.webm" %}
+
 ### January 30, 2020 - Blog post by Tag1 Consulting & Preston So
 
 {% embed url="https://www.tag1consulting.com/blog/yjs-deep-dive-part-1" %}
