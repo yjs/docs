@@ -1,0 +1,4 @@
+# Storing Document Content
+
+\[placeholder\]
+
