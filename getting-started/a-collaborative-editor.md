@@ -76,9 +76,9 @@ const ytext = ydoc.getText('quill')
 const binding = new QuillBinding(quill, ytext)
 ```
 
-The `ytext` type is a shared data type that holds text data and supports formatting attributes \(i.e. **bold** and _italic_\). Yjs automatically resolves concurrent changes on shared types so we don't have to worry about conflict resolution anymore. Then we synchronize the `ytext` type with the `quill` editor and keep them in-sync using the [y-quill](../yjs-ecosystem/editor-bindings/yjs-quilljs.md) binding. Almost all editor bindings work like this. So you can simply exchange the editor binding if you choose to use another editor.
+The `ytext` type is a shared data type that holds text data and supports formatting attributes \(i.e. **bold** and _italic_\). Yjs automatically resolves concurrent changes on shared types so we don't have to worry about conflict resolution anymore. Then we synchronize `ytext` with the `quill` editor and keep them in-sync using the `QuillBinding`. Almost all editor bindings work like this. So you can simply exchange the editor binding if you choose to use another editor.
 
-But don't stop here, the editor doesn't sync yet to other clients! We need to choose a **provider** or [implement our own communication protocol](../tutorials/creating-a-custom-provider.md) to exchange document updates with other peers.
+But don't stop here, the editor doesn't sync to other clients yet! We need to choose a **provider** or [implement our own communication protocol](../tutorials/creating-a-custom-provider.md) to exchange document updates with other peers.
 
 {% page-ref page="../yjs-ecosystem/connection-provider/" %}
 
