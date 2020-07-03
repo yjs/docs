@@ -34,7 +34,7 @@ Yjs doesn't make any assumption about the network technology you are using. As l
 
 You can integrate Yjs into your existing communication infrastructure, or use one of the [several existing network providers](yjs-ecosystem/connection-provider/) that allow you to jump-start your application backend.
 
-Scaling shared editing backends is not trivial. Most shared editing technologies depend on a single source of truth - a central server - to perform conflict resolution. Since Yjs doesn't need a central source of truth, we can design the backend using ideas from distributed system architecture. In fact, Yjs can be scaled indefinitely as it is shown by the [y-redis section](tutorials/untitled-3.md).
+Scaling shared editing backends is not trivial. Most shared editing solutions depend on a single source of truth - a central server - to perform conflict resolution. Since Yjs doesn't need a central source of truth, we can design the backend using ideas from distributed system architecture. In fact, Yjs can be scaled indefinitely as it is shown in the [y-redis section](tutorials/untitled-3.md).
 
 And why not design an application using P2P technologies without sharing data with a server? Yjs is perfectly capable of doing that. We include several examples of how Yjs can be used without a backend and without any setup 
 
