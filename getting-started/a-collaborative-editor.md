@@ -7,10 +7,10 @@ description: A five minute guide to make an editor collaborative
 Yjs is a modular framework for syncing things in real-time - like editors!
 
 {% hint style="info" %}
-If you are impatient jump to the live demo at the bottom of the page😉 
+If you are impatient jump to the live demo at the bottom of the page😉
 {% endhint %}
 
-First, let's decide on an editor to use. There are tons of awesome open-source editors and Yjs supports many of them. 
+First, let's decide on an editor to use. There are tons of awesome open-source editors and Yjs supports many of them.
 
 {% page-ref page="../yjs-ecosystem/editor-bindings/" %}
 
@@ -82,7 +82,7 @@ But don't stop here, the editor doesn't sync to other clients yet! We need to ch
 
 {% page-ref page="../yjs-ecosystem/connection-provider/" %}
 
-Each provider has pros and conns. The[ y-webrtc](../yjs-ecosystem/connection-provider/y-webrtc.md) provider connects clients directly with each other and is a perfect choice for demo applications because it doesn't require you to set up a server.  But for a real-world application, you often want to sync the document to a server. In any case, it is easy to change the provider because they all implement the same interface.
+Each provider has pros and conns. The[ y-webrtc](../yjs-ecosystem/connection-provider/y-webrtc.md) provider connects clients directly with each other and is a perfect choice for demo applications because it doesn't require you to set up a server. But for a real-world application, you often want to sync the document to a server. In any case, it is easy to change the provider because they all implement the same interface.
 
 {% tabs %}
 {% tab title="y-webrtc" %}
@@ -90,7 +90,6 @@ Each provider has pros and conns. The[ y-webrtc](../yjs-ecosystem/connection-pro
 import { WebrtcProvider } from 'y-webrtc'
 
 const provider = new WebrtcProvider('quill-demo-room', ydoc)
-
 ```
 {% endtab %}
 
@@ -122,7 +121,7 @@ npm i y-dat
 {% endtab %}
 {% endtabs %}
 
-Providers work similarly to editor bindings. They sync Yjs documents through a  communication protocol or a database. All providers have in common that they use the concept of room-names to connect Yjs documents. In the above example, all documents that specify `'quill-demo-room'` as the room-name will sync.
+Providers work similarly to editor bindings. They sync Yjs documents through a communication protocol or a database. All providers have in common that they use the concept of room-names to connect Yjs documents. In the above example, all documents that specify `'quill-demo-room'` as the room-name will sync.
 
 {% hint style="info" %}
 **Providers are meshable.** You can connect several providers to a Yjs document. [\(See Tutorial\)](https://jsfiddle.net/dmonad/gh7jm6y5/7/)
@@ -132,11 +131,7 @@ By combining Yjs with providers and editor bindings we created our first collabo
 
 But for now, let's enjoy what we built. I included the same fiddle twice so you can observe the editors sync in real-time. Aware, the editor content is synced with all users visiting this page!
 
-{% embed url="https://jsfiddle.net/dmonad/gh7jm6y5/" %}
+{% embed url="https://jsfiddle.net/dmonad/gh7jm6y5/" caption="" %}
 
 {% embed url="https://jsfiddle.net/dmonad/gh7jm6y5/" caption="The complete example in a live demo \(click on \"Result\"\)" %}
-
-
-
-
 

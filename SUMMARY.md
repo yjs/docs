@@ -1,6 +1,6 @@
 # Table of contents
 
-* [What is Yjs](README.md)
+* [Introduction](README.md)
 * [Yjs in the Wild](yjs-in-the-wild.md)
 * [License ❤️](license.md)
 
@@ -22,6 +22,7 @@
   * [Monaco](yjs-ecosystem/editor-bindings/yjs-monaco.md)
   * [Quill](yjs-ecosystem/editor-bindings/yjs-quilljs.md)
   * [CodeMirror](yjs-ecosystem/editor-bindings/yjs-codemirror.md)
+  * [Remirror](yjs-ecosystem/editor-bindings/remirror.md)
 * [Connection Provider](yjs-ecosystem/connection-provider/README.md)
   * [y-websocket](yjs-ecosystem/connection-provider/y-websocket.md)
   * [y-webrtc](yjs-ecosystem/connection-provider/y-webrtc.md)
