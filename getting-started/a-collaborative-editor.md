@@ -131,7 +131,9 @@ By combining Yjs with providers and editor bindings we created our first collabo
 
 But for now, let's enjoy what we built. I included the same fiddle twice so you can observe the editors sync in real-time. Aware, the editor content is synced with all users visiting this page!
 
-{% embed url="https://jsfiddle.net/dmonad/gh7jm6y5/" caption="" %}
+{% embed url="https://stackblitz.com/edit/y-quill?embed=1&file=index.ts&hideExplorer=1" %}
 
-{% embed url="https://jsfiddle.net/dmonad/gh7jm6y5/" caption="The complete example in a live demo \(click on \"Result\"\)" %}
+{% embed url="https://stackblitz.com/edit/y-quill?embed=1&file=index.ts&hideExplorer=1" %}
+
+
 
