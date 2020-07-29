@@ -10,8 +10,6 @@ Yjs is a high-performance [CRDT](https://en.wikipedia.org/wiki/Conflict-free_rep
 
 It exposes its internal CRDT model as _shared types_. Shared types are just common data types like `Map` or `Array`. They can be manipulated like regular data types, they fire events when changes happen, and you can always merge them without merge conflicts. Always!
 
-{% embed url="https://jsfiddle.net/dmonad/hr7dmpcv/" %}
-
 ## Editor Support
 
 Yjs supports many of the most popular text and rich-text editors. And the list keeps growing!
@@ -46,7 +44,7 @@ We built a rich ecosystem of extensions around Yjs. There are ready-to-use edito
 
 ## Unmatched Performance🚀 
 
-Yjs is the fastest and most efficient CRDT implementation, by far.
+Yjs is the fastest CRDT implementation, by far.
 
 {% embed url="https://github.com/dmonad/crdt-benchmarks" %}
 

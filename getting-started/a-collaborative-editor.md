@@ -7,7 +7,7 @@ description: A five minute guide to make an editor collaborative
 Yjs is a modular framework for syncing things in real-time - like editors!
 
 {% hint style="info" %}
-If you are impatient jump to the live demo at the bottom of the page😉
+If you are impatient jump to the live demo at the bottom of the page 😉
 {% endhint %}
 
 First, let's decide on an editor to use. There are tons of awesome open-source editors and Yjs supports many of them.
@@ -57,7 +57,7 @@ npm i quill
 {% endtab %}
 {% endtabs %}
 
-Next, we are going to setup Yjs and the [y-quill](../yjs-ecosystem/editor-bindings/yjs-quilljs.md) editor binding.
+Next, we are going to install Yjs and the [y-quill](../yjs-ecosystem/editor-bindings/yjs-quilljs.md) editor binding.
 
 ```bash
 npm i yjs y-quill
@@ -76,13 +76,13 @@ const ytext = ydoc.getText('quill')
 const binding = new QuillBinding(quill, ytext)
 ```
 
-The `ytext` type is a shared data type that holds text data and supports formatting attributes \(i.e. **bold** and _italic_\). Yjs automatically resolves concurrent changes on shared types so we don't have to worry about conflict resolution anymore. Then we synchronize `ytext` with the `quill` editor and keep them in-sync using the `QuillBinding`. Almost all editor bindings work like this. So you can simply exchange the editor binding if you choose to use another editor.
+The `ytext` type is a shared data type that holds text data and supports formatting attributes \(i.e. **bold** and _italic_\). Yjs automatically resolves concurrent changes on shared types so we don't have to worry about conflict resolution anymore. Then we synchronize `ytext` with the `quill` editor and keep them in-sync using the `QuillBinding`. Almost all editor bindings work like this. So you can simply exchange the editor binding if you switch to another editor.
 
 But don't stop here, the editor doesn't sync to other clients yet! We need to choose a **provider** or [implement our own communication protocol](../tutorials/creating-a-custom-provider.md) to exchange document updates with other peers.
 
 {% page-ref page="../yjs-ecosystem/connection-provider/" %}
 
-Each provider has pros and conns. The[ y-webrtc](../yjs-ecosystem/connection-provider/y-webrtc.md) provider connects clients directly with each other and is a perfect choice for demo applications because it doesn't require you to set up a server. But for a real-world application, you often want to sync the document to a server. In any case, it is easy to change the provider because they all implement the same interface.
+Each provider has pros and conns. The[ y-webrtc](../yjs-ecosystem/connection-provider/y-webrtc.md) provider connects clients directly with each other and is a perfect choice for demo applications because it doesn't require you to set up a server. But for a real-world application, you often want to sync the document to a server. In any case, we got you covered and it is easy to change the provider because they all implement the same interface.
 
 {% tabs %}
 {% tab title="y-webrtc" %}
