@@ -14,23 +14,23 @@ It exposes its internal CRDT model as _shared types_. Shared types are just comm
 
 Yjs supports many of the most popular text and rich-text editors. And the list keeps growing!
 
-{% page-ref page="yjs-ecosystem/editor-bindings/yjs-prosemirror.md" %}
+{% page-ref page="ecosystem/editor-bindings/yjs-prosemirror.md" %}
 
-{% page-ref page="yjs-ecosystem/editor-bindings/yjs-tiptap.md" %}
+{% page-ref page="ecosystem/editor-bindings/yjs-tiptap.md" %}
 
-{% page-ref page="yjs-ecosystem/editor-bindings/yjs-monaco.md" %}
+{% page-ref page="ecosystem/editor-bindings/yjs-monaco.md" %}
 
-{% page-ref page="yjs-ecosystem/editor-bindings/yjs-quilljs.md" %}
+{% page-ref page="ecosystem/editor-bindings/yjs-quilljs.md" %}
 
-{% page-ref page="yjs-ecosystem/editor-bindings/yjs-codemirror.md" %}
+{% page-ref page="ecosystem/editor-bindings/yjs-codemirror.md" %}
 
-{% page-ref page="yjs-ecosystem/editor-bindings/remirror.md" %}
+{% page-ref page="ecosystem/editor-bindings/remirror.md" %}
 
 ## Network Agnostic 📡
 
 Yjs doesn't make any assumption about the network technology you are using. As long as all changes eventually arrive, the documents will sync. The order in which document updates are applied doesn't matter.
 
-You can integrate Yjs into your existing communication infrastructure, or use one of the [several existing network providers](yjs-ecosystem/connection-provider/) that allow you to jump-start your application backend.
+You can integrate Yjs into your existing communication infrastructure, or use one of the [several existing network providers](ecosystem/connection-provider/) that allow you to jump-start your application backend.
 
 Scaling shared editing backends is not trivial. Most shared editing solutions depend on a single source of truth - a central server - to perform conflict resolution. Since Yjs doesn't need a central source of truth, we can design the backend using ideas from distributed system architecture. In fact, Yjs can be scaled indefinitely as it is shown in the [y-redis section](tutorials/untitled-3.md).
 

@@ -12,7 +12,7 @@ If you are impatient jump to the live demo at the bottom of the page 😉
 
 First, let's decide on an editor to use. There are tons of awesome open-source editors and Yjs supports many of them.
 
-{% page-ref page="../yjs-ecosystem/editor-bindings/" %}
+{% page-ref page="../ecosystem/editor-bindings/" %}
 
 For the purpose of this guide, we are going to use the [Quill](https://quilljs.com/) editor - a great rich-text editor that is easy to setup. For a complete reference on how to setup Quill I refer to [their documentation](https://quilljs.com/playground/).
 
@@ -57,7 +57,7 @@ npm i quill
 {% endtab %}
 {% endtabs %}
 
-Next, we are going to install Yjs and the [y-quill](../yjs-ecosystem/editor-bindings/yjs-quilljs.md) editor binding.
+Next, we are going to install Yjs and the [y-quill](../ecosystem/editor-bindings/yjs-quilljs.md) editor binding.
 
 ```bash
 npm i yjs y-quill
@@ -80,9 +80,9 @@ The `ytext` type is a shared data type that holds text data and supports formatt
 
 But don't stop here, the editor doesn't sync to other clients yet! We need to choose a **provider** or [implement our own communication protocol](../tutorials/creating-a-custom-provider.md) to exchange document updates with other peers.
 
-{% page-ref page="../yjs-ecosystem/connection-provider/" %}
+{% page-ref page="../ecosystem/connection-provider/" %}
 
-Each provider has pros and conns. The[ y-webrtc](../yjs-ecosystem/connection-provider/y-webrtc.md) provider connects clients directly with each other and is a perfect choice for demo applications because it doesn't require you to set up a server. But for a real-world application, you often want to sync the document to a server. In any case, we got you covered and it is easy to change the provider because they all implement the same interface.
+Each provider has pros and conns. The[ y-webrtc](../ecosystem/connection-provider/y-webrtc.md) provider connects clients directly with each other and is a perfect choice for demo applications because it doesn't require you to set up a server. But for a real-world application, you often want to sync the document to a server. In any case, we got you covered and it is easy to change the provider because they all implement the same interface.
 
 {% tabs %}
 {% tab title="y-webrtc" %}
