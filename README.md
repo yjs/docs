@@ -14,15 +14,15 @@ It exposes its internal CRDT model as _shared types_. Shared types are just comm
 
 Yjs supports many of the most popular text and rich-text editors. And the list keeps growing!
 
-{% page-ref page="ecosystem/editor-bindings/yjs-prosemirror.md" %}
+{% page-ref page="ecosystem/editor-bindings/prosemirror.md" %}
 
-{% page-ref page="ecosystem/editor-bindings/yjs-tiptap.md" %}
+{% page-ref page="ecosystem/editor-bindings/tiptap.md" %}
 
-{% page-ref page="ecosystem/editor-bindings/yjs-monaco.md" %}
+{% page-ref page="ecosystem/editor-bindings/monaco.md" %}
 
-{% page-ref page="ecosystem/editor-bindings/yjs-quilljs.md" %}
+{% page-ref page="ecosystem/editor-bindings/quill.md" %}
 
-{% page-ref page="ecosystem/editor-bindings/yjs-codemirror.md" %}
+{% page-ref page="ecosystem/editor-bindings/codemirror.md" %}
 
 {% page-ref page="ecosystem/editor-bindings/remirror.md" %}
 

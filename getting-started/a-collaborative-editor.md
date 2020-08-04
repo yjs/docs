@@ -57,7 +57,7 @@ npm i quill
 {% endtab %}
 {% endtabs %}
 
-Next, we are going to install Yjs and the [y-quill](../ecosystem/editor-bindings/yjs-quilljs.md) editor binding.
+Next, we are going to install Yjs and the [y-quill](../ecosystem/editor-bindings/quill.md) editor binding.
 
 ```bash
 npm i yjs y-quill
