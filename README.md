@@ -6,6 +6,10 @@ description: >-
 
 # Introduction
 
+{% hint style="info" %}
+This documentation website is a work in progress. The best source of information is still the [Yjs README](https://github.com/yjs/yjs) and the [yjs-demos](https://github.com/yjs/yjs-demos) repository.
+{% endhint %}
+
 Yjs is a high-performance [CRDT](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) for building collaborative applications that sync automatically.
 
 It exposes its internal CRDT model as _shared types_. Shared types are just common data types like `Map` or `Array`. They can be manipulated like regular data types, they fire events when changes happen, and you can always merge them without merge conflicts. Always!
