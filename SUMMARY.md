@@ -50,6 +50,7 @@
   * [Cursor Example](api/about-awareness/cursor-example.md)
   * [Presence Example](api/about-awareness/presence-example.md)
 * [Garbage Collection](api/garbage-collection.md)
+* [Internals](api/internals.md)
 
 ## 🧪 Tutorials
 
@@ -66,5 +67,6 @@
 * [CRDT Benchmarks](https://github.com/dmonad/crdt-benchmarks)
 * [Yjs Discussion Board](https://discuss.yjs.dev/)
 * [Yjs Chat](https://gitter.im/Yjs/community)
+* [Kevin's Blog](https://blog.kevinjahns.de/)
 * [Awesome People ⭐](https://github.com/yjs/yjs/stargazers)
 
