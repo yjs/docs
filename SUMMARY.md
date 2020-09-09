@@ -49,6 +49,7 @@
 * [Awareness](api/about-awareness/README.md)
   * [Cursor Example](api/about-awareness/cursor-example.md)
   * [Presence Example](api/about-awareness/presence-example.md)
+* [Subdocuments](api/subdocuments.md)
 * [Garbage Collection](api/garbage-collection.md)
 * [Internals](api/internals.md)
 
