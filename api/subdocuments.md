@@ -98,9 +98,6 @@ doc.on('subdocs', ({ loaded }) => {
     new WebrtcProvider(subdoc.guid, subdoc)
   })
 })
+doc.getSubdocs() // Get the Set<Y.Doc> of all subdocuments
 ```
-
-
-
-
 
