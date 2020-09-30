@@ -63,7 +63,7 @@
 
 ## 🌎 External Resources <a id="other-resources"></a>
 
-* [Talks, Podcasts, and Blog](other-resources/talks-and-podcasts.md)
+* [Talks, Podcasts, and Blogs](other-resources/talks-and-podcasts.md)
 * [About CRDTs](https://crdt.tech/)
 * [CRDT Benchmarks](https://github.com/dmonad/crdt-benchmarks)
 * [Yjs Discussion Board](https://discuss.yjs.dev/)

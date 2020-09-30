@@ -2,7 +2,29 @@
 description: Yjs related resources in chronological order
 ---
 
-# Talks, Podcasts, and Blog
+# Talks, Podcasts, and Blogs
+
+
+
+{% hint style="info" %}
+If you know of any resources related to Yjs, please post them to the [discussion board](https://discuss.yjs.dev/).
+{% endhint %}
+
+## September 26, 2020 - Joseph Gentle, CRDTs are the future
+
+{% embed url="https://josephg.com/blog/crdts-are-the-future/" %}
+
+## September 24, 2020 - Microsoft Ignite, The future of data systems
+
+{% embed url="https://myignite.microsoft.com/sessions/7db762c9-2629-4cff-849f-0e043eb12cef" %}
+
+## September 3, 2020 - Yjs walkthrough with Joseph Gentle & Kevin Jahns
+
+{% embed url="https://youtu.be/0l5XgnQ6rB4" %}
+
+## August 10, 2020 - Blog post by Kevin Jahns
+
+{% embed url="https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing/" %}
 
 ## April 8, 2020 - Blog post by Tag1 Consulting & Preston So
 
