@@ -82,7 +82,7 @@ But don't stop here, the editor doesn't sync to other clients yet! We need to ch
 
 {% page-ref page="../ecosystem/connection-provider/" %}
 
-Each provider has pros and conns. The[ y-webrtc](../ecosystem/connection-provider/y-webrtc.md) provider connects clients directly with each other and is a perfect choice for demo applications because it doesn't require you to set up a server. But for a real-world application, you often want to sync the document to a server. In any case, we got you covered and it is easy to change the provider because they all implement the same interface.
+Each provider has pros and cons. The[ y-webrtc](../ecosystem/connection-provider/y-webrtc.md) provider connects clients directly with each other and is a perfect choice for demo applications because it doesn't require you to set up a server. But for a real-world application, you often want to sync the document to a server. In any case, we got you covered. It is easy to change the provider because they all implement the same interface.
 
 {% tabs %}
 {% tab title="y-webrtc" %}
@@ -124,7 +124,7 @@ npm i y-dat
 Providers work similarly to editor bindings. They sync Yjs documents through a communication protocol or a database. All providers have in common that they use the concept of room-names to connect Yjs documents. In the above example, all documents that specify `'quill-demo-room'` as the room-name will sync.
 
 {% hint style="info" %}
-**Providers are meshable.** You can connect several providers to a Yjs document. [\(See Tutorial\)](https://jsfiddle.net/dmonad/gh7jm6y5/7/)
+**Providers are meshable.** You can connect multiple providers to a Yjs instance at the same time. Document updates will automatically sync through the different communication channels. Meshing providers can improve reliability and decrease network delay.
 {% endhint %}
 
 By combining Yjs with providers and editor bindings we created our first collaborative editor. In the following sections, we will explore more Yjs concepts like awareness, shared types, and offline editing.
