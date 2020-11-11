@@ -1,4 +1,0 @@
-# Allowing Offline Editing
-
-\[placeholder\]
-

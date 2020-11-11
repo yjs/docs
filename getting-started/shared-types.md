@@ -1,0 +1,4 @@
+# Shared Types
+
+\[placeholder\]
+

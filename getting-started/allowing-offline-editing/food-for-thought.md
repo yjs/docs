@@ -1,4 +1,0 @@
-# Food for Thought
-
-\[placeholder\]
-

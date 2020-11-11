@@ -8,9 +8,8 @@
 
 * [A Collaborative Editor](getting-started/a-collaborative-editor.md)
 * [Awareness & Presence](getting-started/adding-awareness.md)
-* [Make More Things Collaborative](getting-started/make-more-things-collaborative.md)
-* [Allowing Offline Editing](getting-started/allowing-offline-editing/README.md)
-  * [Food for Thought](getting-started/allowing-offline-editing/food-for-thought.md)
+* [Offline Support](getting-started/allowing-offline-editing.md)
+* [Shared Types](getting-started/shared-types.md)
 * [Storing Document Content](getting-started/storing-document-content.md)
 
 ## 🔥 Ecosystem
