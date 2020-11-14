@@ -51,6 +51,7 @@
 * [Subdocuments](api/subdocuments.md)
 * [Garbage Collection](api/garbage-collection.md)
 * [Internals](api/internals.md)
+* [FAQ](api/faq.md)
 
 ## 🧪 Tutorials
 
