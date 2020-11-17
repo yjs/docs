@@ -32,6 +32,7 @@
   * [y-redis](ecosystem/database-provider/y-redis.md)
 * [Other](ecosystem/other/README.md)
   * [y-protocols](ecosystem/other/y-protocols.md)
+* [Ports to other languages](ecosystem/ports-to-other-languages.md)
 
 ## 🔧 API
 

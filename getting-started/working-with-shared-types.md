@@ -78,7 +78,7 @@ ydoc.transact(() => {
 
 ```
 
-If possible, you should bundle as many changes in a single transaction as possible. The advantage is that you limit the number of observer calls. You also avoid other expensive event-handler calls. 
+Event handlers and observers are called after each transaction. If possible, you should bundle as many changes in a single transaction as possible. The advantage is that you reduce expensive observer calls.
 
 Yjs fires events in the following order:
 
@@ -90,9 +90,37 @@ Yjs fires events in the following order:
 * `ydoc.on('afterTransaction', event => {})` 
 * `ydoc.on('update', update => { .. })` - This update message is propagated by the providers.
 
-Especially when manipulating many objects, it makes sense to reduce the number of update messages created. So use transactions whenever possible.
+Especially when manipulating many objects, it makes sense to reduce the creation of update messages. So use transactions whenever possible.
 
-### Creating a file-system with Yjs 
+### Managing multiple collaborative documents in a shared type
 
-\[todo\]
+We often want to manage multiple collaborative documents in a single Yjs document. For example, we would like to create & delete documents from a list of documents. You can manage multiple documents using shared types. In the following demo project, I implemented functionality to add & delete documents. The list of all documents is updated in real-time as well. 
+
+{% embed url="https://stackblitz.com/edit/y-quill-doc-list" %}
+
+
+
+{% embed url="https://stackblitz.com/edit/y-quill-doc-list" %}
+
+You could extend the above demo project to ..
+
+* .. be able to delete specific documents
+* .. have a collaborative document-name. You could introduce a Y.Map that holds the document-name, the document-content, and the creation-date.
+* .. extend the document list to a fully-fledged file system.
+
+### Collaborative Drawing App
+
+
+
+### Conclusion
+
+Shared types are not just great for collaborative editing. They are a unique kind of data structure that can be used to sync any kind of state across servers, browsers, and [soon also native applications](https://github.com/yjs/yrs).  Yjs is focused on creating collaborative applications and gives you all the tools you need to create complex applications that can compete with Google Workspace. But they might also be useful in high-performance computing for sharing state across threads, or in gaming for syncing data to remote clients as fast as possible. Since Yjs & Shared Types don't depend on a central server, these data structures are the ideal building block for decentralized, privacy-focused applications as well.
+
+### 
+
+### 
+
+
+
+
 
