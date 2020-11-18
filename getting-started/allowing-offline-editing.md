@@ -43,7 +43,7 @@ Yjs doesn't have a concept of authority. There is no central peer that manages c
 y-indexeddb works with any other provider. Again, Yjs providers are meshable. You can use several providers at the same time to achieve maximum reliability.
 {% endhint %}
 
-Database providers also allow native applications to sync document state to a local database. There is a growing collection of providers available in the [ecosystem section](../ecosystem/about.md).
+Database providers also allow native applications to sync document state to a local database. There is a growing collection of providers available in the [ecosystem section]().
 
 ### Loading HTML content without network access
 

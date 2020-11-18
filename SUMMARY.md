@@ -10,11 +10,9 @@
 * [Awareness & Presence](getting-started/adding-awareness.md)
 * [Offline Support](getting-started/allowing-offline-editing.md)
 * [Working with Shared Types](getting-started/working-with-shared-types.md)
-* [Storing Document Content](getting-started/storing-document-content.md)
 
 ## 🔥 Ecosystem
 
-* [About](ecosystem/about.md)
 * [Editor Bindings](ecosystem/editor-bindings/README.md)
   * [ProseMirror](ecosystem/editor-bindings/prosemirror.md)
   * [TipTap](ecosystem/editor-bindings/tiptap.md)
