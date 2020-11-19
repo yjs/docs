@@ -110,7 +110,7 @@ You could extend the above demo project to ..
 
 ### Collaborative Drawing App
 
-
+\[..\]
 
 ### Conclusion
 
