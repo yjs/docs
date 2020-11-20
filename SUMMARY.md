@@ -9,7 +9,7 @@
 * [A Collaborative Editor](getting-started/a-collaborative-editor.md)
 * [Awareness & Presence](getting-started/adding-awareness.md)
 * [Offline Support](getting-started/allowing-offline-editing.md)
-* [Working with Shared Types](getting-started/working-with-shared-types.md)
+* [Shared Types](getting-started/working-with-shared-types.md)
 
 ## 🔥 Ecosystem
 

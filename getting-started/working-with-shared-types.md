@@ -1,4 +1,4 @@
-# Working with Shared Types
+# Shared Types
 
 By now, we have learned how to make an editor collaborative and how to sync document updates using different providers. But we haven't covered the most unique feature of Yjs yet: Shared Types.
 
