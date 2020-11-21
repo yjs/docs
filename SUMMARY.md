@@ -41,6 +41,7 @@
   * [Y.Text](api/shared-types/y.text.md)
   * [Y.XmlFragment](api/shared-types/y.xmlfragment.md)
   * [Y.XmlElement](api/shared-types/y.xmlelement.md)
+  * [Y.Event](api/shared-types/y.event.md)
 * [Document Updates](api/document-updates.md)
 * [Relative Positions](api/relative-positions.md)
 * [Undo Manager](api/undo-manager.md)
