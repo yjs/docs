@@ -4,6 +4,8 @@ description: A shared type similar with a similar API to global.Map
 
 # Y.Map
 
+
+
 ```javascript
 import * as Y from 'yjs'
 
@@ -45,7 +47,7 @@ ymap.delete('prop-name')
 **`ymap.has(key: string): boolean`**  
     Returns true if an entry with the specified key exists. This method works similarly to the[ Map.has](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has) method.
 
-**`ymap.toJSON(): Object<string,object|boolean|Array|string|number|Uint8Array|Y.AbstractType>`**  
+**`ymap.toJSON(): Object<string,object|boolean|Array|string|number|Uint8Array>`**  
     Copies the `[key,value]` pairs of this Y.Map to a new Object. It transforms all shared types to JSON using their `toJSON` method.
 
 **`ymap.forEach(value: any, key: string, map: Y.Map)`**  
@@ -113,5 +115,5 @@ ymap.delete('key') // => Property "key" was deleted. New value: undefined. Previ
 `ymapEvent.keysChanged: Set<string>`  
     A [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) containing all keys that were modified during a transaction.
 
-See [Y.Event](y.event.md) API. The rest of the API is inherited by Y.Event.
+See [Y.Event](y.event.md) API. The rest of the API is inherited from Y.Event.
 
