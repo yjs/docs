@@ -1,9 +1,5 @@
 # Subdocuments
 
-{% hint style="warning" %}
-This feature will be released on October 1. Feedback is welcome!
-{% endhint %}
-
 Yjs documents can be embedded into shared types. This allows you to manage vast amounts of Yjs documents as part of a root document.
 
 ```javascript
