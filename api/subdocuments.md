@@ -37,7 +37,6 @@ subDoc.on('synced', () => {
 subDocText.observe(() => {
   // data changed..
 })
-
 ```
 
 Subdocuments are lazily loaded after they have been explicitly loaded to memory. A subdocument can be destroyed `doc.destroy()` to free all used memory and destroy existing data bindings. The document can be accessed again to force the provider to load the content again.
@@ -86,7 +85,7 @@ doc.on('subdocs', ({ added: Set<Y.Doc>, removed: Set<Y.Doc>, loaded: Set<Y.Doc> 
 })
 ```
 
-Providers \(e.g. y-websocket, y-indexeddb\)  are responsible for syncing subdocuments. Not all providers support subdocuments yet. A simple method to implement lazy-loading documents is to create a provider instance to the `doc.guid`-room once a document is loaded:
+Providers \(e.g. y-websocket, y-indexeddb\) are responsible for syncing subdocuments. Not all providers support subdocuments yet. A simple method to implement lazy-loading documents is to create a provider instance to the `doc.guid`-room once a document is loaded:
 
 ```javascript
 doc.on('subdocs', ({ loaded }) => {
