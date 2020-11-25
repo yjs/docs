@@ -115,5 +115,5 @@ ymap.delete('key') // => Property "key" was deleted. New value: undefined. Previ
 `ymapEvent.keysChanged: Set<string>`  
     A [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) containing all keys that were modified during a transaction.
 
-See [Y.Event](y.event.md) API. The rest of the API is inherited from Y.Event.
+See [Y.Event](../y.event.md) API. The rest of the API is inherited from Y.Event.
 

@@ -14,7 +14,7 @@ First, we define a shared type on a Yjs document. Then we can manipulate it and 
 import * as Y from 'yjs'
 
 const ydoc = new Y.Doc()
-// Define a Y.Array named "my array"
+// Define an instance of Y.Array named "my array"
 // Every peer that defines "my array" like this will sync content with this peer.
 const yarray = ydoc.getArray('my array')
 

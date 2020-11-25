@@ -21,7 +21,7 @@ const doc = new Y.Doc()
 You can specify an optional `origin` parameter that is stored on `transaction.origin` and `on('update', (update, origin) => ..)`.
 
 **`doc.get(string, Y.[TypeClass]): [Type]`**  
-    Define a shared type.
+    Get a top-level instance of a shared type.
 
 **`doc.toArray(string = ''): Y.Array`**  
     Define a shared Y.Array type. Is equivalent to `y.get(string, Y.Array)`.
