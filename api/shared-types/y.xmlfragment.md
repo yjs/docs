@@ -30,11 +30,17 @@ yxmlFragment.get(0) === yxmlText // => true
 **`yxmlFragment.parent: Y.AbstractType | null`**  
     The parent that holds this type. Is `null` if this `yxmlFragment` is a top-level type.
 
+**`yxmlFragment.firstChild: Y.XmlElement | Y.XmlText | null`**  
+    The first child that holds this type holds. Is `null` if this type doesn't hold any children.
+
 **`yxmlFragment.length: number`**  
     The number of child-elements that this Y.XmlFragment holds.
 
 **`yxmlFragment.insert(index: number, content: Array<Y.XmlElement | Y.XmlText>)`**  
     Insert content at a specified `index`. Note that - for performance reasons - content is always an array of elements. I.e. `yxmlFragment.insert(0, [new Y.XmlElement()])` inserts a single element at position 0.
+
+**`yxmlFragment.insertAfter(ref: Y.XmlElement | Y.XmlText | null, content: Array<Y.XmlElement | Y.XmlText>)`**  
+    Insert content after a reference element. If the reference element `ref` is null, then the content is inserted at the beginning.
 
 **`yxmlFragment.delete(index: number, length: number)`**  
     Delete `length` elements starting from `index`.
