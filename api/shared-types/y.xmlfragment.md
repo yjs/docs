@@ -61,7 +61,14 @@ yxmlFragment.get(0) === yxmlText // => true
     Retrieve the JSON representation of this type. The result is an XML string.
 
 **`yxmlFragment.createTreeWalker(filter: function(yxml: Y.XmlElement | Y.XmlText): boolean): Iterable`**  
-    Create an Iterable that walks through all children of this type \(not only direct children\). The returned iterable returns every element that the filter accepts. I.e. `for (const paragraph of yxmlFragment.createTreeWalker(yxml => yxml.nodeName === 'p') { .. }` iterates through all `Y.XmlElements` that have the node-name `<p>`.
+    Create an [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) that walks through all children of this type \(not only direct children\). The returned iterable returns every element that the filter accepts. I.e. the following code iterates through all `Y.XmlElements` that have the node-name `'p'`.
+
+```javascript
+// Log all <p> nodes that are children of this Y.XmlFragment
+for (const paragraph of yxmlFragment.createTreeWalker(yxml => yxml.nodeName === 'p')) {
+  ..
+}
+```
 
 **`yxmlFragment.clone(): Y.XmlFragment`**  
     Clone all values into a fresh Y.XmlFragment instance. The returned type can be included into the Yjs document.
@@ -80,32 +87,19 @@ yxmlFragment.get(0) === yxmlText // => true
 
 ## Observing changes: Y.XmlEvent
 
-\[todo\]
-
-The `yxmlFragment.observe` callback fires `Y.XmlEvent` events that you can use to calculate the changes that happened during a transaction. We use an adaption of the [Quill delta format](https://quilljs.com/docs/delta/) to calculate the differences. Instead of strings, our ArrayDelta works on Arrays. You can find more examples and information about the delta format in our [Y.Event API](../y.event.md#delta-format).
+The `yxmlFragment.observe` callback fires `Y.XmlEvent` events that you can use to calculate the changes that happened during a transaction. We use an adaption of the [Quill delta format](https://quilljs.com/docs/delta/) to calculate insertions & deletions of child-elements. You can find more examples and information about the delta format in our [Y.Event API](../y.event.md#delta-format).
 
 ```javascript
-yarray.observe(yarrayEvent => {
+yxmlFragment.observe(yxmlElent => {
   yarrayEvent.target === yarray // => true
 
-  // Find out what changed: 
-  // Log the Array-Delta Format to calculate the difference to the last observe-event
-  console.log(yarrayEvent.changes.delta)
+  // Observe when child-elements are added or deleted. 
+  // Log the Xml-Delta Format to calculate the difference to the last observe-event
+  console.log(yxmlEvent.changes.delta)
 })
 
-yarray.insert(0, [1, 2, 3]) // => [{ insert: [1, 2, 3] }]
-yarray.delete(2, 1) // [{ retain: 2 }, { delete: 1 }]
-
-console.log(yarray.toArray()) // => [1, 2]
-
-// The delta-format is very useful when multiple changes
-// are performed in a single transaction
-ydoc.transact(() => {
-  yarray.insert(1, ['a', 'b'])
-  yarray.delete(2, 2) // deletes 'b' and 2
-}) // => [{ retain: 1 }, { insert: ['a'] }, { delete: 1 }]
-
-console.log(yarray.toArray()) // => [1, 'a']
+yxmlFragment.insert(0, [new Y.XmlText()]) // => [{ insert: [yxmlText] }]
+yxmlFragment.delete(0, 1) // [{ delete: 1 }]
 ```
 
 ### Y.XmlEvent API
