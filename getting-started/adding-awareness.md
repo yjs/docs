@@ -31,7 +31,7 @@ awareness.on('change', changes => {
 
 // You can think of your own awareness information as a key-value store.
 // We update our "user" field to propagate relevant user information.
-awareness.setLocaleAwarenessField('user', {
+awareness.setLocalAwarenessField('user', {
   // Define a print name that should be displayed
   name: 'Emmanuelle Charpentier',
   // Define a color that should be associated to the user:
