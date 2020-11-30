@@ -24,13 +24,37 @@ yxmlFragment.get(0) === yxmlText // => true
 
 ## API
 
-Inherits from [Y.XmlFragment](y.xmlfragment.md).
+> Inherits from [Y.XmlFragment](y.xmlfragment.md).
 
-..
+**`const yxmlElement = Y.XmlElement(nodeName: string)`**
 
-\[todo\]
+**`yxmlElement.nodeName: string`**  
+    The name of this Y.XmlElement as a String.
+
+**`yxmlElement.prevSibling: Y.XmlElement | Y.XmlText | null`**  
+    The previous sibling of this type. Is null if this is the first child of its parent.
+
+**`yxmlElement.nextSibling: Y.XmlElement | Y.XmlText | null`**  
+    The next sibling of this type. Is null if this is the last child of its parent.
+
+**`yxmlElement.toString(): string`**  
+    Returns the XML-String representation of this element. E.g. `"<div height="30px"></div>"`
+
+**`yxmlElement.setAttribute(name: string, value: string | Y.AbstractType)`**  
+    Set an XML attribute. Technically, the value can only be a string. But we also allow shared types. In this case, the XML type can't be properly converted to a string.
+
+**`yxmlElement.removeAttribute(name: string)`**  
+    Remove an XML attribute.
+
+**`yxmlElement.getAttribute(name: string): string | Y.AbstractType`**  
+    Retrieve an XML attribute.
+
+**`yxmlElement.getAttributes(): Object<string, string | Y.AbstractType>`**  
+    Retrieve all XML attributes.
 
 ## Observing changes: Y.XmlEvent
+
+\[todo\]
 
 The `yxmlFragment.observe` callback fires `Y.XmlEvent` events that you can use to calculate the changes that happened during a transaction. We use an adaption of the [Quill delta format](https://quilljs.com/docs/delta/) to calculate insertions & deletions of child-elements. You can find more examples and information about the delta format in our [Y.Event API](../y.event.md#delta-format).
 
