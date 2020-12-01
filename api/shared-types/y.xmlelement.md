@@ -54,21 +54,40 @@ yxmlFragment.get(0) === yxmlText // => true
 
 ## Observing changes: Y.XmlEvent
 
-\[todo\]
-
-The `yxmlFragment.observe` callback fires `Y.XmlEvent` events that you can use to calculate the changes that happened during a transaction. We use an adaption of the [Quill delta format](https://quilljs.com/docs/delta/) to calculate insertions & deletions of child-elements. You can find more examples and information about the delta format in our [Y.Event API](../y.event.md#delta-format).
+The `yxmlElement.observe` callback fires `Y.XmlEvent` events that you can use to calculate the changes that happened during a transaction. We use an adaption of the [Quill delta format](https://quilljs.com/docs/delta/) to calculate insertions & deletions of child-elements. Changes on the xml-attributes are expressed using the same API from [Y.Map](y.map.md#observing-changes-y-mapevent).
 
 ```javascript
 yxmlFragment.observe(yxmlElent => {
-  yarrayEvent.target === yarray // => true
+  yxmlEvent.target === yarray // => true
 
   // Observe when child-elements are added or deleted. 
   // Log the Xml-Delta Format to calculate the difference to the last observe-event
   console.log(yxmlEvent.changes.delta)
+
+  // Observe attribute changes.  
+  // Option 1: A set of keys that changed
+  yxmlEvent.keysChanged // => Set<strings>
+  // Option 2: Compute the differences
+  yxmlEvent.changes.keys // => Map<string, { action: 'add'|'update'|'delete', oldValue: any}>
+  
+  // The change format is equivalent to the Y.MapEvent change format.
+  yxmlEvent.changes.keys.forEach((change, key) => {
+    if (change.action === 'add') {
+      console.log(`Attribute "${key}" was added. Initial value: "${ymap.get(key)}".`)
+    } else if (change.action === 'update') {
+      console.log(`Attribute "${key}" was updated. New value: "${ymap.get(key)}". Previous value: "${change.oldValue}".`)
+    } else if (change.action === 'delete') {
+      console.log(`Attribute "${key}" was deleted. New value: undefined. Previous value: "${change.oldValue}".`)
+    }
+  })
 })
 
-yxmlFragment.insert(0, [new Y.XmlText()]) // => [{ insert: [yxmlText] }]
-yxmlFragment.delete(0, 1) // [{ delete: 1 }]
+yxmlElement.insert(0, [new Y.XmlText()]) // => [{ insert: [yxmlText] }]
+yxmlElement.delete(0, 1) // [{ delete: 1 }]
+
+yxmlElement.setAttribute('key', 'value') // Attribute "key" was added. Initial value: "undefined".
+yxmlElement.setAttribute('key', 'new value') // Attribute "key" was updated. New value: "new value". Previous value: "value"
+yxmlElement.deleteAttribute('key') // Attribute "key" was deleted. New value: undefined. Previous value: "new value"
 ```
 
 ### Y.XmlEvent API

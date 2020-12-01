@@ -91,7 +91,7 @@ The `yxmlFragment.observe` callback fires `Y.XmlEvent` events that you can use t
 
 ```javascript
 yxmlFragment.observe(yxmlElent => {
-  yarrayEvent.target === yarray // => true
+  yxmlEvent.target === yarray // => true
 
   // Observe when child-elements are added or deleted. 
   // Log the Xml-Delta Format to calculate the difference to the last observe-event
@@ -100,6 +100,8 @@ yxmlFragment.observe(yxmlElent => {
 
 yxmlFragment.insert(0, [new Y.XmlText()]) // => [{ insert: [yxmlText] }]
 yxmlFragment.delete(0, 1) // [{ delete: 1 }]
+
+
 ```
 
 ### Y.XmlEvent API
