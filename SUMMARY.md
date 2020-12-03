@@ -43,6 +43,7 @@
   * [Y.XmlElement](api/shared-types/y.xmlelement.md)
   * [Y.XmlText](api/shared-types/y.xmltext.md)
 * [Y.Event](api/y.event.md)
+* [Delta Format](api/delta-format.md)
 * [Document Updates](api/document-updates.md)
 * [Relative Positions](api/relative-positions.md)
 * [Undo Manager](api/undo-manager.md)
