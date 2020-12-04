@@ -32,6 +32,9 @@ You can specify an optional `origin` parameter that is stored on `transaction.or
 **`doc.getXmlFragment(string = ''): Y.XmlFragment`**  
     Define a shared Y.XmlFragment type. Is equivalent to `y.get(string, Y.XmlFragment)`.
 
+**`doc.destroy()`**  
+    Destroy this Y.Doc instance. All event handlers are cleared and the content is cleared from memory unless it is still being referenced. Bindings and providers that are attached to this document are also destroyed.
+
 **`doc.on(eventName: string, function(event))`**  
     Register an [event handler](y.doc.md#event-handler).
 
@@ -43,24 +46,27 @@ You can specify an optional `origin` parameter that is stored on `transaction.or
 
 ### Event Handler
 
-`doc.on('beforeTransaction', function(tr: Transaction, doc: Y.Doc)`  
+`doc.on('beforeTransaction', function(tr: Transaction, doc: Y.Doc))`  
     The event handler is called right before every transaction. 
 
-`doc.on('beforeObserverCalls', function(tr: Transaction, doc: Y.Doc)`  
+`doc.on('beforeObserverCalls', function(tr: Transaction, doc: Y.Doc))`  
     The event handler is called right before observers on shared types are called.
 
-`doc.on('afterTransaction', function(tr: Transaction, doc: Y.Doc)`  
+`doc.on('afterTransaction', function(tr: Transaction, doc: Y.Doc))`  
     The event handler is called right before every transaction. 
 
-`doc.on('update', function(update: Uint8Array, origin: any, doc: Y.Doc)`  
+`doc.on('update', function(update: Uint8Array, origin: any, doc: Y.Doc))`  
     Listen to update messages on the shared document. As long as all update messages are propagated to all users, everyone will eventually consent to the same state. See more about this in the [Document Updates](document-updates.md) chapter.  
     You can generate update messages from the transaction as well, but since creating update messages is relatively expensive we try to generate it once and call this event handler.
 
-`doc.on('updateV2', function(update: Uint8Array, origin: any, doc: Y.Doc)`  
+`doc.on('updateV2', function(update: Uint8Array, origin: any, doc: Y.Doc))`  
     \(EXPERIMENTAL\) This is an alternative update message format that is up to 10x more efficient. Should not be used in production.
 
-`doc.on('subdocs', function(changes: { loaded: Set<Y.Doc>, added: Set<Y.Doc>, removed: Set<Y.Doc> })`  
-    Event triggered when subdocuments are added/removed or loaded. See [Subdocuments](subdocuments.md) on how this event can be used. 
+`doc.on('subdocs', function(changes: { loaded: Set<Y.Doc>, added: Set<Y.Doc>, removed: Set<Y.Doc> }))`  
+    Event is triggered when subdocuments are added/removed or loaded. See [Subdocuments](subdocuments.md) on how this event can be used. 
+
+`doc.on('destroy', function(doc: Y.Doc))`  
+    The event handler is called just before the Y.Doc is destroyed. Bindings and providers should listen to this event and destroy themselves when the event is called.
 
 ### Order of events
 
