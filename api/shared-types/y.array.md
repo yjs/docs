@@ -1,3 +1,7 @@
+---
+description: A shared type to store data in a sequence-like data structure
+---
+
 # Y.Array
 
 

@@ -1,3 +1,7 @@
+---
+description: A shared type that represents Text & RichText
+---
+
 # Y.Text
 
 

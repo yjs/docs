@@ -1,3 +1,7 @@
+---
+description: A shared type to manage a collection of Y.Xml* Nodes
+---
+
 # Y.XmlFragment
 
 
