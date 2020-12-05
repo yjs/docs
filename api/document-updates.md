@@ -1,8 +1,28 @@
+---
+description: How to sync documents with other peers.
+---
+
 # Document Updates
 
-Changes on the shared document are encoded into _document updates_. Document updates are _commutative_ and _idempotent_. This means that they can be applied in any order and multiple times.
+Changes on the shared document are encoded into _document updates_. Document updates are _commutative, associative,_ and _idempotent_. This means that you can apply them in any order and multiple times. All clients will sync up when they received all document updates. In Yjs, clients can also sync up by computing a state vector and then exchanging the differences.
 
-#### **Example: Listen to update events and apply them on a remote client**
+## Update API
+
+**`Y.applyUpdate(Y.Doc, update:Uint8Array, [transactionOrigin:any])`**   
+    Apply a document update on the shared document. Optionally you can specify `transactionOrigin` that will be stored on `transaction.origin` and `ydoc.on('update', (update, origin) => ..)`.
+
+**`Y.encodeStateAsUpdate(Y.Doc, [encodedTargetStateVector:Uint8Array]): Uint8Array`**   
+    Encode the document state as a single update message that can be applied on the remote document. Optionally, specify the target state vector to only write the differences to the update message.
+
+**`Y.encodeStateVector(Y.Doc): Uint8Array`**   
+    Computes the state vector and encodes it into an Uint8Array.
+
+**`ydoc.on('update', eventHandler: function(update: Uint8Array, origin: any, doc: Y.Doc))`**   
+    Listen to incremental updates on the Yjs document. This is part of the [Y.Doc API](y.doc.md#event-handler).  Send the computed incremental update to all connected clients, or store it in a database.
+
+## Examples
+
+### **Example: Listen to update events and apply them on a remote client**
 
 ```javascript
 const doc1 = new Y.Doc()
@@ -21,7 +41,9 @@ doc1.getArray('myarray').insert(0, ['Hello doc2, you got this?'])
 doc2.getArray('myarray').get(0) // => 'Hello doc2, you got this?'
 ```
 
-Yjs internally maintains a [state vector](https://github.com/yjs/yjs#State-Vector) that denotes the next expected clock from each client. In a different interpretation, it holds the number of structs created by each client. When two clients sync, you can either exchange the complete document structure or only the differences by sending the state vector to compute the differences.
+### Syncing clients
+
+Yjs internally maintains a [state vector](https://github.com/yjs/yjs#State-Vector) that denotes the next expected clock from each client. In a different interpretation, it holds the number of modifications created by each client. When two clients sync, you can either exchange the complete document structure or only the differences by sending the state vector to compute the differences.
 
 **Example: Sync two clients by exchanging the complete document structure**
 
@@ -34,7 +56,7 @@ Y.applyUpdate(ydoc2, state1)
 
 **Example: Sync two clients by computing the differences**
 
-This example shows how to sync two clients with a minimal amount of exchanged data by computing only the differences using the state vector of the remote client. Syncing clients using the state vector requires another roundtrip but can save a lot of bandwidth.
+This example shows how to sync two clients with a minimal amount of data exchanged by computing the differences using the state vector of the remote client. Syncing clients using the state vector requires another roundtrip but can save a lot of bandwidth.
 
 ```javascript
 const stateVector1 = Y.encodeStateVector(ydoc1)
@@ -45,14 +67,29 @@ Y.applyUpdate(ydoc1, diff2)
 Y.applyUpdate(ydoc2, diff1)
 ```
 
-## Update API
+### Example: Base64 encoding
 
-**`Y.applyUpdate(Y.Doc, update:Uint8Array, [transactionOrigin:any])`**   
-    Apply a document update on the shared document. Optionally you can specify `transactionOrigin` that will be stored on `transaction.origin` and `ydoc.on('update', (update, origin) => ..)`.
+We compress document updates to a highly compressed binary format. Therefore, document updates are represented as [Uint8Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array). An `Uint8Array` represents binary data similarly to a [NodeJS' Buffer](https://nodejs.org/api/buffer.html) . The difference is that `Uint8Array` is available in all JavaScript environments. The catch is that you can't [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)/[`JSON.parse`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) the data because there is no JSON representation for binary data.  However, most communication protocols support binary data. If you still need to transform the data into a string, you can use [Base64 encoding](https://en.wikipedia.org/wiki/Base64). For example, by using the [`js-base64`](https://www.npmjs.com/package/js-base64) library:
 
-**`Y.encodeStateAsUpdate(Y.Doc, [encodedTargetStateVector:Uint8Array]): Uint8Array`**   
-    Encode the document state as a single update message that can be applied on the remote document. Optionally specify the target state vector to only write the differences to the update message.
+{% tabs %}
+{% tab title="JavaScript" %}
+```javascript
+import { fromUint8Array, toUint8Array } from 'js-base64'
 
-**`Y.encodeStateVector(Y.Doc): Uint8Array`**   
-    Computes the state vector and encodes it into an Uint8Array.
+const documentState = Y.encodeStateAsUpdate(ydoc) // is a Uint8Array
+// Transform Uint8Array to a Base64-String
+const base64Encoded = fromUint8Array(documentState)
+// Transform Base64-String back to an Uint8Array
+const binaryEncoded = toUint8Array(base64Encoded)
+```
+{% endtab %}
+
+{% tab title="Install" %}
+```bash
+npm install js-base64
+```
+{% endtab %}
+{% endtabs %}
+
+
 
