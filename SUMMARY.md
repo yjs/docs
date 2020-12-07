@@ -46,7 +46,7 @@
 * [Y.Event](api/y.event.md)
 * [Delta Format](api/delta-format.md)
 * [Document Updates](api/document-updates.md)
-* [Relative Positions](api/relative-positions.md)
+* [Y.RelativePosition](api/relative-positions.md)
 * [Awareness](api/about-awareness/README.md)
   * [Cursor Example](api/about-awareness/cursor-example.md)
   * [Presence Example](api/about-awareness/presence-example.md)
