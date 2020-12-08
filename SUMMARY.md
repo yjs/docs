@@ -51,17 +51,16 @@
   * [Cursor Example](api/about-awareness/cursor-example.md)
   * [Presence Example](api/about-awareness/presence-example.md)
 * [Subdocuments](api/subdocuments.md)
-* [Garbage Collection](api/garbage-collection.md)
 * [Internals](api/internals.md)
 * [FAQ](api/faq.md)
 
 ## 🧪 Tutorials
 
+* [Meshing Providers](tutorials/meshing-providers.md)
 * [Persisting the Document to a Central Database](tutorials/persisting-the-document-to-a-central-database.md)
-* [Custom Provider](tutorials/creating-a-custom-provider.md)
 * [Indefinite Scaling with y-redis](tutorials/untitled-3.md)
 * [Lessons Learned](tutorials/lessons-learned.md)
-* [Meshing Providers](tutorials/meshing-providers.md)
+* [Custom Provider](tutorials/creating-a-custom-provider.md)
 
 ## 🌎 External Resources <a id="other-resources"></a>
 
