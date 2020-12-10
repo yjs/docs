@@ -51,7 +51,7 @@ const binding = new QuillBinding(ytext, quill, provider.awareness)
 
 For now, we have covered everything we need to know to continue with our tutorial. The complete API documentation for the Awareness CRDT is available in a separate section:
 
-{% page-ref page="../api/about-awareness/" %}
+{% page-ref page="../api/about-awareness.md" %}
 
 ## Adding common awareness features to our collaborative editor
 
