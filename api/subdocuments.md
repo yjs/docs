@@ -1,3 +1,7 @@
+---
+description: Embedding Yjs documents into Yjs documents
+---
+
 # Subdocuments
 
 Yjs documents can be embedded into shared types. This allows you to manage vast amounts of Yjs documents as part of a root document.

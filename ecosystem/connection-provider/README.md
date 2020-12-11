@@ -1,4 +1,6 @@
-# Connection Provider
+---
+description: Connection providers handle syncing with the network
+---
 
-I'm still in the process of moving the documentation to this place. For now, you can find the documentation in the respective README
+# Connection Provider
 

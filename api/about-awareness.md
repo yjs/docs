@@ -6,7 +6,9 @@ description: API documentation of the Awareness CRDT
 
 Awareness is an optional feature that works well together with Yjs. As I described in [Awareness & Presence](../getting-started/adding-awareness.md), the feature is not part of the `yjs` module. It is defined in [y-protocols](https://github.com/yjs/y-protocols) and is usually implemented by the providers. If you want to implement your custom provider, you can use the Awareness CRDT, or implement a custom protocol. It's up to you.
 
-{% embed url="https://github.com/yjs/y-protocols" caption="y-protocols repository" %}
+If you haven't already, you should read the getting-started guide on awareness.
+
+{% page-ref page="../getting-started/adding-awareness.md" %}
 
 ## Awareness CRDT
 
@@ -14,7 +16,7 @@ Awareness is an optional feature that works well together with Yjs. As I describ
 import * as awarenessProtocol from 'y-protocols/awareness.js'
 ```
 
-The Awareness protocol implements a simple network agnostic CRDT that manages user status \(who is online?\) and propagate awareness information like cursor location, username, or email address. Each client can update its own local state and listen to state changes of remote clients.
+The awareness protocol implements a simple network agnostic CRDT that manages user status \(who is online?\) and propagate awareness information like cursor location, username, or email address. Each client can update its own local state and listen to state changes of remote clients.
 
 Each client has an awareness state. Remote awareness states are stored in a Map that maps from remote client id to an awareness state. An _awareness state_ is an increasing clock attached to a schemaless JSON object.
 
@@ -53,18 +55,22 @@ awareness = provider.awareness
 **`awareness.on('change', ({ added: Array, updated: Array removed: Array }, [transactionOrigin:any]) => ..)`**  
     Listen to remote and local awareness changes. This event is called even when the awareness state does not change but is only updated to notify other users that this client is still online. Use this event if you want to propagate awareness state to other users.
 
+## Awareness Protocol
+
+The awareness protocol is implemented by most providers. It allows you to use the Awareness CRDT to propagate presence and awareness information. Although it is not a requirement, it is recommended that all providers that interact with Yjs implement this protocol. If you want to implement the awareness protocol into your custom provider, this section is for you.
+
 ### Awareness Protocol API
 
 **`awarenessProtocol.encodeAwarenessUpdate(awareness: Awareness, clients: Array<number>): Uint8Array`**  
     Encode the awareness states of the specified clients into an update encoded as `Uint8Array`.
 
 **`awarenessProtocol.applyAwarenessUpdate(awareness: Awareness, update: Uint8array)`**  
-    Apply an awareness update created with `encodeAwarenessUpdate` to an instance of the Awareness  CRDT.
+    Apply an awareness update created with `encodeAwarenessUpdate` to an instance of the Awareness CRDT.
 
 **`awarenessProtocol.removeAwarenessStates(awareness: Awareness, clients: Array<number>, origin: any)`**  
     Remove the awareness states of the specified clients. This will call the `update` and the `change` event handler of the Awareness CRDT. Sometimes you want to mark yourself or others as offline. As soon as you know that a client is offline, you should call this function. It is not part of the Awareness CRDT, because it should only be used by the provider that implements awareness.
 
-## Adding Awareness Support to a Provider
+### Adding Awareness Support to a Provider
 
 Awareness CRDT updates work similarly to Yjs updates. First, you sync with a client. Then you exchange incremental updates with that client using the `update` event. The only difference is that the Awareness CRDT doesn't support _state vectors_ to exchange a minimal amount of information. That only makes things easier and has little performance impact because awareness states are usually pretty small.
 
@@ -112,13 +118,7 @@ websocket.onclose = () => {
 }
 ```
 
-When you get lost, you should have a look at one of the existing providers that implement Awareness. The y-websocket is a fairly simple provider and might be a good starting point for you.
+When you get lost, you should have a look at one of the existing providers that implement the awareness protocol. The y-websocket is a fairly simple provider and might be a good starting point for you.
 
-{% embed url="https://github.com/yjs/y-websocket/" %}
-
-
-
-
-
-
+{% embed url="https://github.com/yjs/y-websocket/" caption="" %}
 
