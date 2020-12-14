@@ -66,5 +66,3 @@ The following example persists document updates to the browsers' database withou
 
 {% embed url="https://stackblitz.com/edit/y-indexeddb?file=index.ts" %}
 
-
-
