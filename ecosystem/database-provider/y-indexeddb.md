@@ -60,3 +60,11 @@ npm i --save y-indexeddb
 **`provider.clearData(): Promise`**  
     Destroy this database and remove the stored document and all related meta-information from the database.
 
+## Example
+
+The following example persists document updates to the browsers' database without sharing it with anyone. The content will be persisted across sessions \(you can reload the window\).
+
+{% embed url="https://stackblitz.com/edit/y-indexeddb?file=index.ts" %}
+
+
+
