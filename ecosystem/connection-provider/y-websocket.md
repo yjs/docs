@@ -63,7 +63,54 @@ npm i ws
 
 ## API
 
-\[todo\]
+```javascript
+import { WebsocketProvider } from 'y-websocket'
+```
+
+**`const wsProvider = new WebsocketProvider(serverUrl: string, room: string, ydoc: Y.Doc [, wsOpts: WsOpts])`**  
+    Create a new websocket-provider instance. As long as this provider, or the connected `ydoc`, is not destroyed, the changes will be synced to other clients via the connected server. Optionally, you may specify a configuration object. The following default values of `wsOpts` can be overwritten. 
+
+```javascript
+wsOpts = {
+  // Set this to `false` if you want to connect manually using wsProvider.connect()
+  connect: true,
+  // Specify a query-string that will be url-encoded and attached to the `serverUrl`
+  // I.e. params = { auth: "bearer" } will be transformed to "?auth=bearer"
+  params: {}, // Object<string,string>
+  // You may polyill the Websocket object (https://developer.mozilla.org/en-US/docs/Web/API/WebSocket).
+  // E.g. In nodejs, you could specify WebsocketPolyfill = require('ws')
+  WebsocketPolyfill: Websocket,
+  // Specify an existing Awareness instance - see https://github.com/yjs/y-protocols
+  awareness: new awarenessProtocol.Awareness(ydoc)
+}
+```
+
+**`wsProvider.wsconnected: boolean`**  
+    True if this instance is currently connected to the server.
+
+**`wsProvider.wsconnecting: boolean`**  
+    True if this instance is currently connecting to the server.
+
+**`wsProvider.shouldConnect: boolean`**  
+    If false, the client will not try to reconnect.  
+
+**`wsProvider.bcconnected: boolean`**  
+    True if this instance is currently communicating to other browser-windows via [BroadcastChannel](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel).
+
+**`wsProvider.synced: boolean`**  
+    True if this instance is currently connected and synced with the server.
+
+**`wsProvider.disconnect()`**  
+    Disconnect from the server and don't try to reconnect.
+
+**`wsProvider.connect()`**   
+    Establish a websocket connection to the websocket-server. Call this if you recently disconnected or if you set `wsOpts.connect = false`.
+
+**`wsProvider.destroy()`**  
+    Destroy this `wsProvider` instance. Disconnects from the server and removes all event handlers.
+
+**`wsProvider.on('sync', function(isSynced: boolean))`**  
+    Add an event listener for the `sync` event that is fired when the client received content from the server.
 
 ## Websocket Server:
 
@@ -87,11 +134,11 @@ PORT=1234 YPERSISTENCE=./dbDir node ./node_modules/y-websocket/bin/server.js
 
 Send a debounced callback to an HTTP server \(`POST`\) on document update.
 
-Can take the following ENV variables:
+Can take the following environment variables:
 
 * `CALLBACK_URL` : Callback server URL
 * `CALLBACK_DEBOUNCE_WAIT` : Debounce time between callbacks \(in ms\). Defaults to 2000 ms 
-* `CALLBACK_DEBOUNCE_MAXWAIT` : Maximum time to wait before callback. Defaults to 10 seconds
+* `CALLBACK_DEBOUNCE_MAXWAIT` : Maximum time to wait before the callback. Defaults to 10 seconds
 * `CALLBACK_TIMEOUT` : Timeout for the HTTP call. Defaults to 5 seconds
 * `CALLBACK_OBJECTS` : JSON of shared objects to get data \(`'{"SHARED_OBJECT_NAME":"SHARED_OBJECT_TYPE}'`\)
 
