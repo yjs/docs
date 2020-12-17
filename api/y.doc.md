@@ -11,7 +11,7 @@ const doc = new Y.Doc()
 ### Y.Doc API
 
 **`doc.clientID: number`** \(readonly\)  
-****    A unique id that identifies this client.
+****    A unique id that identifies a client for a session. It should not be reused across sessions - see [FAQ](faq.md#i-get-a-new-clientid-for-every-session-is-there-a-way-to-make-it-static-for-a-peer-accessing-the-document).
 
 **`doc.gc: boolean`**   
      Whether garbage collection is enabled on this doc instance. Set `doc.gc = false` to disable garbage collection and be able to restore old content. See [Internals](internals.md) for more information about how garbage collection works.
