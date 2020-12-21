@@ -1,6 +1,6 @@
 ---
 description: >-
-  Modular building blocks for collaborative applications like Google Docs or
+  Modular building blocks for collaborative applications like Google Docs and
   Figma.
 ---
 
@@ -32,7 +32,7 @@ Yjs supports many of the most popular text and rich-text editors. And the list k
 
 ## Network Agnostic 📡
 
-Yjs doesn't make any assumption about the network technology you are using. As long as all changes eventually arrive, the documents will sync. The order in which document updates are applied doesn't matter.
+Yjs doesn't make any assumptions about the network technology you are using. As long as all changes eventually arrive, the documents will sync. The order in which document updates are applied doesn't matter.
 
 You can integrate Yjs into your existing communication infrastructure, or use one of the [several existing network providers](ecosystem/connection-provider/) that allow you to jump-start your application backend.
 
