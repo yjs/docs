@@ -15,10 +15,10 @@
     Computes the path from the Y.Doc to the changed type. You can traverse to the changed type by calling `ydoc.get(path[0]).get(path[1]).get(path[2]).get( ..`.
 
 **`yevent.changes.delta: Delta`**  
-    Computes the changes in the delta format. See more in the [Delta Format ](delta-format.md)section.
+    Computes the changes in the array-delta format. See more in the [Delta Format ](delta-format.md)section. The text delta is only available on Y.TextEvent \(`ytextEvent.delta`\)
 
 **`yevent.changes.keys: Map<string, { action: 'add' | 'update' | 'delete', oldValue: any }>`**  
-    Computes changes on the attributes / key-value map of a shared type. In Y.Map it is used to represent  changed keys. In Y.Xml it is used to describe changes on the xml-attributes.
+    Computes changes on the attributes / key-value map of a shared type. In Y.Map it is used to represent  changed keys. In Y.Xml it is used to describe changes on the XML-attributes.
 
 
 
