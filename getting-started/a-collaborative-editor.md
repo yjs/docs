@@ -10,7 +10,7 @@ Yjs is a modular framework for syncing things in real-time - like editors!
 If you are impatient jump to the live demo at the bottom of the page 😉
 {% endhint %}
 
-First, let's decide on an editor to use. There are tons of awesome open-source editors and Yjs supports many of them.
+First, let's decide on an editor to use. There are tons of awesome open-source editors. Yjs supports many of them.
 
 {% page-ref page="../ecosystem/editor-bindings/" %}
 
@@ -76,7 +76,7 @@ const ytext = ydoc.getText('quill')
 const binding = new QuillBinding(quill, ytext)
 ```
 
-The `ytext` type is a shared data type that holds text data and supports formatting attributes \(i.e. **bold** and _italic_\). Yjs automatically resolves concurrent changes on shared types so we don't have to worry about conflict resolution anymore. Then we synchronize `ytext` with the `quill` editor and keep them in-sync using the `QuillBinding`. Almost all editor bindings work like this. So you can simply exchange the editor binding if you switch to another editor.
+The `ytext` object is a shared data structure for representing text. It also supports formatting attributes \(i.e. **bold** and _italic_\). Yjs automatically resolves concurrent changes on shared data so we don't have to worry about conflict resolution anymore. Then we synchronize `ytext` with the `quill` editor and keep them in-sync using the `QuillBinding`. Almost all editor bindings work like this. You can simply exchange the editor binding if you switch to another editor.
 
 But don't stop here, the editor doesn't sync to other clients yet! We need to choose a **provider** or [implement our own communication protocol](../tutorials/creating-a-custom-provider.md) to exchange document updates with other peers.
 
