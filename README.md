@@ -15,23 +15,30 @@ Yjs is a high-performance [CRDT](https://en.wikipedia.org/wiki/Conflict-free_rep
 It exposes its internal CRDT model as _shared types_. Shared types are similar to common data structures like `Map` and `Array`. They can be manipulated, fire events when changes happen, and you can always merge them without merge conflicts.
 
 ```javascript
-// A Yjs document is responsible for managing transactions and
-// updates on the shared data.
+// Yjs documents are collections of
+// shared objects that sync automatically.
 const ydoc = new Y.Doc()
-// Create a shared type (see Y.Map)
+// Define a shared Y.Map instance (see Y.Map)
 const myMap = ydoc.getMap()
 myMap.set('keyA', 'valueA')
+// Define a shared Y.Text instance (see Y.Text)
+const myText = ydoc.getText()
+myText.insert(0, 'Hello')
 
 // Create another Yjs document (simulating a remote user)
 const ydocRemote = new Y.Doc()
 const myRemoteMap = ydoc.getMap()
 myRemoteMap.set('keyB', 'valueB')
+const myRemoteText = ydoc.getText()
+myText.insert(0, 'World')
 
 // Merge changes from remote
 const update = Y.encodeStateAsUpdate(ydocRemote)
 Y.applyUpdate(ydoc, update)
 
+// Observe that the changes merged
 myMap.toJSON() // => { keyA: 'valueA', keyB: 'valueB' }
+myText.toString() // => "Hello World!" or "World Hello"
 
 ```
 
