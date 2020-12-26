@@ -14,6 +14,10 @@ Yjs is a high-performance [CRDT](https://en.wikipedia.org/wiki/Conflict-free_rep
 
 It exposes its internal CRDT model as _shared types_. Shared types are similar to common data structures like `Map` and `Array`. They can be manipulated, fire events when changes happen, and you can always merge them without merge conflicts.
 
+### Quick Start
+
+This is a working example of how shared types automatically sync. There is also a [getting-started guide](getting-started/a-collaborative-editor.md) , API documentation, and lots of [live demos with source code](https://github.com/yjs/yjs-demos).
+
 ```javascript
 // Yjs documents are collections of
 // shared objects that sync automatically.
