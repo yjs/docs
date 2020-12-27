@@ -66,11 +66,13 @@ Yjs supports many of the most popular text and rich-text editors. And the list k
 
 Yjs doesn't make any assumptions about the network technology you are using. As long as all changes eventually arrive, the documents will sync. The order in which document updates are applied doesn't matter.
 
-You can integrate Yjs into your existing communication infrastructure, or use one of the [several existing network providers](ecosystem/connection-provider/) that allow you to jump-start your application backend.
+You can [integrate Yjs into your existing communication infrastructure](tutorials/creating-a-custom-provider.md), or use one of the [several existing network providers](ecosystem/connection-provider/) that allow you to jump-start your application backend.
 
-Scaling shared editing backends is not trivial. Most shared editing solutions depend on a single source of truth - a central server - to perform conflict resolution. Since Yjs doesn't need a central source of truth, we can design the backend using ideas from distributed system architecture. In fact, Yjs can be scaled indefinitely as it is shown in the [y-redis section](tutorials/untitled-3.md).
+Scaling shared editing backends is not trivial. Most shared editing solutions depend on a single source of truth - a central server - to perform conflict resolution. Yjs doesn't need a central source of truth. This enables you to design the backend using ideas from distributed system architecture. In fact, Yjs can be scaled indefinitely as it is shown in the [y-redis section](tutorials/untitled-3.md).
 
-And why not design an application using P2P technologies without sharing data with a server? Yjs is perfectly capable of doing that. We include several examples of how Yjs can be used without a backend and without any setup 
+Another interesting application for Yjs as a data model for decentralized and [Local-First software](https://www.inkandswitch.com/local-first.html).
+
+
 
 ## Rich Ecosystem 🔥 
 
