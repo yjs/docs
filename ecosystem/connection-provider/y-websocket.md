@@ -4,7 +4,7 @@ description: WebSocket Provider for Yjs that ships with a extendable server impl
 
 # y-websocket
 
-The Websocket Provider implements a classical client-server model. Clients connect to a single endpoint over Websocket. The server distributes awareness information and document updates among clients.
+The Websocket Provider implements a conventional client-server model. Clients connect to a single endpoint over Websocket. The server distributes document updates and awareness information among clients. You can configure providers on the server as well, which allow you to persist document updates or scale your infrastructure.
 
 The Websocket Provider is a solid choice if you want a central source that handles authentication and authorization. Websockets also send header information and cookies, so you can use existing authentication mechanisms with this server.
 
