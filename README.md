@@ -1,7 +1,7 @@
 ---
 description: >-
-  Modular building blocks for collaborative applications like Google Docs and
-  Figma.
+  Modular building blocks for building collaborative applications like Google
+  Docs and Figma.
 ---
 
 # Introduction
