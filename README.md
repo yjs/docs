@@ -14,37 +14,32 @@ Yjs is a high-performance [CRDT](https://en.wikipedia.org/wiki/Conflict-free_rep
 
 It exposes its internal CRDT model as _shared data types_ that can be manipulated concurrently. Shared types are similar to common data types like `Map` and `Array`. They can be manipulated, fire events when changes happen, and automatically merge without merge conflicts.
 
-### Quick Start
+## Quick Start
 
 This is a working example of how shared types automatically sync. There is also a [getting-started guide](getting-started/a-collaborative-editor.md) , API documentation, and lots of [live demos with source code](https://github.com/yjs/yjs-demos).
 
 ```javascript
+import * as Y from 'yjs'
+
 // Yjs documents are collections of
 // shared objects that sync automatically.
 const ydoc = new Y.Doc()
-// Define a shared Y.Map instance (see Y.Map)
-const myMap = ydoc.getMap()
-myMap.set('keyA', 'valueA')
-// Define a shared Y.Text instance (see Y.Text)
-const myText = ydoc.getText()
-myText.insert(0, 'Hello')
+// Define a shared Y.Map instance
+const ymap = ydoc.getMap()
+ymap.set('keyA', 'valueA')
 
 // Create another Yjs document (simulating a remote user)
 // and create some conflicting changes
 const ydocRemote = new Y.Doc()
-const myRemoteMap = ydoc.getMap()
-myRemoteMap.set('keyB', 'valueB')
-const myRemoteText = ydoc.getText()
-myText.insert(0, 'World')
+const ymapRemote = ydocRemote.getMap()
+ymapRemote.set('keyB', 'valueB')
 
 // Merge changes from remote
 const update = Y.encodeStateAsUpdate(ydocRemote)
 Y.applyUpdate(ydoc, update)
 
-// Observe that the changes merged
-myMap.toJSON() // => { keyA: 'valueA', keyB: 'valueB' }
-myText.toString() // => "Hello World!" or "World Hello"
-
+// Observe that the changes have merged
+console.log(ymap.toJSON()) // => { keyA: 'valueA', keyB: 'valueB' }
 ```
 
 ## Editor Support
@@ -73,15 +68,15 @@ Scaling shared editing backends is not trivial. Most shared editing solutions de
 
 Another interesting application for Yjs as a data model for decentralized and [Local-First software](https://www.inkandswitch.com/local-first.html).
 
-## Rich Ecosystem 🔥 
+## Rich Ecosystem 🔥
 
 Yjs is a modular approach that allows the community to make any editor collaborative using any network technology. It has thought-through solutions for almost all shared-editing related problems.
 
 We built a rich ecosystem of extensions around Yjs. There are ready-to-use editor integrations for many popular \(rich-\)text editors, adapters to different network technologies \(like WebRTC, WebSocket, or Hyper\), and persistence providers that store document updates in a database.
 
-## Unmatched Performance🚀 
+## Unmatched Performance🚀
 
 Yjs is the fastest CRDT implementation, by far.
 
-{% embed url="https://github.com/dmonad/crdt-benchmarks" %}
+{% embed url="https://github.com/dmonad/crdt-benchmarks" caption="" %}
 
