@@ -34,6 +34,9 @@ awareness = provider.awareness
 **`awareness = new awarenessProtocol.Awareness(ydoc: Y.Doc)`**  
     Create a new awareness instance.
 
+**`awareness.clientID: number`**  
+    A unique identifier that identifies this client. 
+
 **`awareness.destroy()`**  
     Destroy the awareness instance and all associated state and event-handlers.
 
