@@ -16,7 +16,7 @@ It exposes its internal CRDT model as _shared data types_ that can be manipulate
 
 ## Quick Start
 
-This is a working example of how shared types automatically sync. There is also a [getting-started guide](getting-started/a-collaborative-editor.md) , API documentation, and lots of [live demos with source code](https://github.com/yjs/yjs-demos).
+This is a working example of how shared types automatically sync. We also have a [getting-started guide](getting-started/a-collaborative-editor.md), API documentation, and lots of [live demos with source code](https://github.com/yjs/yjs-demos).
 
 ```javascript
 import * as Y from 'yjs'
