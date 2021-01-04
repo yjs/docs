@@ -12,9 +12,15 @@ Yjs is a CRDT implementation. It implements an adaptation of the YATA CRDT with 
 
 ### Implementation Details
 
-Choosing efficient data structures is critical when implementing a CRDT. 
+Choosing efficient data structures is critical when implementing a CRDT. The following document gives an overview of the data structures used in Yjs.
 
 {% embed url="https://github.com/yjs/yjs/blob/main/INTERNALS.md" %}
+
+### Internals Visualization
+
+Visualization of different CRDT algorithms \(including Yjs/YATA and Automerge/RGA\).
+
+{% embed url="https://text-crdt-compare.surge.sh/" %}
 
 ### Optimizations Overview
 
