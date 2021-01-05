@@ -6,11 +6,13 @@ description: A five minute guide to make an editor collaborative
 
 Yjs is a modular framework for syncing things in real-time - like editors!
 
+This guide will walk you through the main concepts of Yjs. First, we are going to create a collaborative editor and sync it with clients. You will get introduced to Yjs documents and to providers, that allow you to sync through different network protocols. Next, we talk about [awareness & presence](adding-awareness.md) which are very important aspects of collaborative applications. I created a separate section for [Offline Support](allowing-offline-editing.md) that shows you how to create offline-ready applications by just adding a few lines of code. The last section is an in-depth guide to [Shared Types](working-with-shared-types.md).
+
 {% hint style="info" %}
 If you are impatient jump to the live demo at the bottom of the page 😉
 {% endhint %}
 
-First, let's decide on an editor to use. There are tons of awesome open-source editors. Yjs supports many of them.
+Let's get started by deciding on an editor to use. Contrary to other shared-editing frameworks, Yjs doesn't ship with a customized editor. There are already a lot of awesome open-source editors projects out there. Yjs supports many of them using extensions. Editor bindings are a concept in Yjs that allow us to bind the state of a third-party editor to a synceable Yjs document. This is a list of all known editor bindings:
 
 {% page-ref page="../ecosystem/editor-bindings/" %}
 
