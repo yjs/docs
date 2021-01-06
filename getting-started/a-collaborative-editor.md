@@ -6,13 +6,13 @@ description: A five minute guide to make an editor collaborative
 
 Yjs is a modular framework for syncing things in real-time - like editors!
 
-This guide will walk you through the main concepts of Yjs. First, we are going to create a collaborative editor and sync it with clients. You will get introduced to Yjs documents and to providers, that allow you to sync through different network protocols. Next, we talk about [awareness & presence](adding-awareness.md) which are very important aspects of collaborative applications. I created a separate section for [Offline Support](allowing-offline-editing.md) that shows you how to create offline-ready applications by just adding a few lines of code. The last section is an in-depth guide to [Shared Types](working-with-shared-types.md).
+This guide will walk you through the main concepts of Yjs. First, we are going to create a collaborative editor and sync it with clients. You will get introduced to Yjs documents and to providers, that allow you to sync through different network protocols. Next, we talk about [Awareness & Presence](adding-awareness.md) which are very important aspects of collaborative software. I created a separate section for [Offline Support](allowing-offline-editing.md) that shows you how to create offline-ready applications by just adding a few lines of code. The last section is an in-depth guide to [Shared Types](working-with-shared-types.md).
 
 {% hint style="info" %}
 If you are impatient jump to the live demo at the bottom of the page 😉
 {% endhint %}
 
-Let's get started by deciding on an editor to use. Contrary to other shared-editing frameworks, Yjs doesn't ship with a customized editor. There are already a lot of awesome open-source editors projects out there. Yjs supports many of them using extensions. Editor bindings are a concept in Yjs that allow us to bind the state of a third-party editor to a synceable Yjs document. This is a list of all known editor bindings:
+Let's get started by deciding on an editor to use.  Yjs doesn't ship with a customized editor. There are already a lot of awesome open-source editors projects out there. Yjs supports many of them using extensions. Editor bindings are a concept in Yjs that allow us to bind the state of a third-party editor to a synceable Yjs document. This is a list of all known editor bindings:
 
 {% page-ref page="../ecosystem/editor-bindings/" %}
 
@@ -74,7 +74,8 @@ const ydoc = new Y.Doc()
 // Define a shared text type on the document
 const ytext = ydoc.getText('quill')
 
-// "Bind" the quill editor to a Yjs text type.
+// Create an editor-binding which
+// "binds" the quill editor to a Y.Text type.
 const binding = new QuillBinding(quill, ytext)
 ```
 
@@ -100,7 +101,9 @@ const provider = new WebrtcProvider('quill-demo-room', ydoc)
 import { WebsocketProvider } from 'y-websocket'
 
 // connect to the public demo server (not in production!)
-const provider = new WebsocketProvider('wss://demos.yjs.dev', 'quill-demo-room', ydoc)
+const provider = new WebsocketProvider(
+  'wss://demos.yjs.dev', 'quill-demo-room', ydoc
+)
 ```
 {% endtab %}
 
@@ -123,10 +126,10 @@ npm i y-dat
 {% endtab %}
 {% endtabs %}
 
-Providers work similarly to editor bindings. They sync Yjs documents through a communication protocol or a database. All providers have in common that they use the concept of room-names to connect Yjs documents. In the above example, all documents that specify `'quill-demo-room'` as the room-name will sync.
+Providers work similarly to editor bindings. They sync Yjs documents through a communication protocol or a database. Most providers have in common that they use the concept of room-names to connect Yjs documents. In the above example, all documents that specify `'quill-demo-room'` as the room-name will sync.
 
 {% hint style="info" %}
-**Providers are meshable.** You can connect multiple providers to a Yjs instance at the same time. Document updates will automatically sync through the different communication channels. Meshing providers can improve reliability and decrease network delay.
+**Providers are meshable.** You can connect multiple providers to a Yjs instance at the same time. Document updates will automatically sync through the different communication channels. Meshing providers can improve reliability through redundancy and decrease network delay.
 {% endhint %}
 
 By combining Yjs with providers and editor bindings we created our first collaborative editor. In the following sections, we will explore more Yjs concepts like awareness, shared types, and offline editing.
