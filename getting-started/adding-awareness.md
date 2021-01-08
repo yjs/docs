@@ -4,7 +4,7 @@ description: Propagating awareness information such as presence &  cursor locati
 
 # Awareness & Presence
 
-Awareness features are an integral part of awesome collaborative applications. In the last chapter, we made an editor collaborative by simply syncing content among all users. But we can communicate more information to help our users work together. By sharing cursor locations and presence information, we help our users to actively work together. Most applications also assign a unique name and color to each user. This kind of information can be generally classified as "Awareness" information. It gives you hints about what other users are currently doing.
+Awareness features are an integral part of collaborative applications. In the last chapter, we made an editor collaborative by syncing content among all users. But we can communicate more information to help our users work together. By sharing cursor locations and presence information, we help our users to actively work together. Most applications also assign a unique name and color to each user. This kind of information can be generally classified as "Awareness" information. It gives you hints about what other users are currently doing. 
 
 We could share even more awareness information like the mouse position of each user, or a live video recording of each user. But when we share too much information, we distract our users from the task at hand. So it is important to find the right balance, that makes sense for your application.
 
@@ -14,12 +14,14 @@ Sharing no awareness information at all is also an option. Then skip this chapte
 
 Awareness information isn't stored in the Yjs document, as it doesn't need to be persisted across sessions. Instead, we use a tiny state-based Awareness CRDT that propagates JSON objects to all users. When you go offline, your own awareness state is automatically deleted and all users are notified that you went offline. While this feature is optional, it is recommended that network providers implement the awareness protocol to make it easier to switch providers. All our network providers implement the Awareness CRDT. 
 
+In this part of the tutorial we use the Awareness CRDT to render remote cursor locations in the Quill editor. Furthermore, we implement a basic interface to render a list of remote users and assign them a user-name that can be updated in real-time.
+
 ## Quick start: Awareness CRDT
 
-The following example shows how you retrieve the Awareness CRDT from the network provider. Then we can set some properties that are propagated to all users. We define the \`"user"\` property to set the name and preferred color for the current user. 
+The following example shows how you retrieve the Awareness CRDT from the network provider. Then we can set some properties that are propagated to all users. We define the`"user"` property to set the name and preferred color for the current user. 
 
 ```javascript
-// all of our network providers implement the awareness crdt
+// All of our network providers implement the awareness crdt
 const awareness = provider.awareness
 
 // You can observe when a any user updated their awareness information
@@ -45,7 +47,7 @@ The fields of the Awareness CRDT are not standardized. You can set any JSON-enco
 
 All editor bindings that support rendering cursor information accept an awareness instance to render cursor information. If the `"user"` awareness field is unspecified, then the editor binding will render the cursor in a default color using a random user name.
 
-```text
+```javascript
 const binding = new QuillBinding(ytext, quill, provider.awareness)
 ```
 
