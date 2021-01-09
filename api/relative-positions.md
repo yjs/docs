@@ -14,10 +14,10 @@ Relative positions are guaranteed to always point to the same location ⇒ Whe
 
 ## Y.RelativePosition API
 
-**`Y.createRelativePositionFromTypeIndex(type: Y.AbstractType, index: number): Y.RelativePosition`**  
-    Create a relative position fixated to the i-th element in any sequence-like shared type.
+**`Y.createRelativePositionFromTypeIndex(type: Y.AbstractType, index: number [, assoc=0]): Y.RelativePosition`**  
+    Create a relative position fixated to the i-th element in any sequence-like shared type \(if `assoc >= 0`\). By default, the position associates with the character that comes after the specified index position. If `assoc < 0`, then the relative position associates with the character before the specified index position. 
 
-**`Y.createAbsolutePositionFromRelativePosition(Y.RelativePosition, Y.Doc): { type: Y.AbstractType, index: number } | null`**  
+**`Y.createAbsolutePositionFromRelativePosition(Y.RelativePosition, Y.Doc): { type: Y.AbstractType, index: number, assoc: number } | null`**  
     Create an absolute position from a relative position. If the relative position cannot be referenced, or the type is deleted, then the result is null.
 
 **`Y.encodeRelativePosition(Y.RelativePosition): Uint8Array`**  
