@@ -55,11 +55,11 @@ You can specify an optional `origin` parameter that is stored on `transaction.or
 **`doc.on('afterTransaction', function(tr: Transaction, doc: Y.Doc))`**  
     The event handler is called right before every transaction. 
 
-**`doc.on('update', function(update: Uint8Array, origin: any, doc: Y.Doc))`**  
+**`doc.on('update', function(update: Uint8Array, origin: any, doc: Y.Doc, tr: Transaction))`**  
     Listen to update messages on the shared document. As long as all update messages are propagated to all users, everyone will eventually consent to the same state. See more about this in the [Document Updates](document-updates.md) chapter.  
     You can generate update messages from the transaction as well, but since creating update messages is relatively expensive we try to generate it once and call this event handler.
 
-**`doc.on('updateV2', function(update: Uint8Array, origin: any, doc: Y.Doc))`**  
+**`doc.on('updateV2', function(update: Uint8Array, origin: any, doc: Y.Doc, tr: Transaction))`**  
     \(EXPERIMENTAL\) This is an alternative update message format that is up to 10x more efficient. Should not be used in production.
 
 **`doc.on('subdocs', function(changes: { loaded: Set<Y.Doc>, added: Set<Y.Doc>, removed: Set<Y.Doc> }))`**  
