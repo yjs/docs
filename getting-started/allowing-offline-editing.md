@@ -14,7 +14,7 @@ Adding offline support in Yjs is as easy as including the [y-indexeddb](https://
 import { IndexeddbPersistence } from 'y-indexeddb'
 
 const ydoc = new Y.Doc()
-const roomName = 'my-document-name'
+const roomName = 'my-room-name'
 const persistence = new IndexeddbPersistence(roomName, ydoc)
 
 // The persistence provider works similarly to the network providers:
@@ -29,21 +29,21 @@ npm i y-indexeddb --save
 {% endtab %}
 {% endtabs %}
 
-Now every change is persisted to a local database. The next time you visit your site, your document will be loaded from the IndexedDB database instead. Only the differences are synced over the network provider. For this reason,  it is always a good idea to use y-indexeddb in your app.
+Now every change is persisted to a local database. The next time you visit your site, your document will be loaded from the IndexedDB database. Only the latest changes are synced over the network provider.
 
-You can listen to `synced` events that fire when your client synced with the IndexedDB database:
+You can listen to `synced` events that fire when your client loaded content from the IndexedDB database:
 
 ```javascript
 persistence.once('synced', () => { console.log('initial content loaded') })
 ```
 
-Yjs doesn't have a concept of authority. There is no central peer that manages conflict resolution. Each peer can sync the latest state to every other peer. They will eventually sync all document updates. Another advantage of using y-indexeddb is that it replicates state to every peer that ever visited the document. In case any peer \(e.g. the server\) loses some data, the other peers will eventually sync the missing document updates back.
+Another advantage of using y-indexeddb is that it replicates state to every peer that ever visited the document. In case any peer \(e.g. the server\) loses some data, the other peers will eventually sync the latest document state back to the server.
 
 {% hint style="info" %}
 y-indexeddb works with any other provider. Again, Yjs providers are meshable. You can use several providers at the same time to achieve maximum reliability.
 {% endhint %}
 
-Database providers also allow native applications to sync document state to a local database. There is a growing collection of providers available in the [ecosystem section]().
+Database providers also allow native applications to sync document state to a local database. There is a growing collection of providers that work in different environments available in the [ecosystem section](../ecosystem/database-provider/).
 
 ### Loading HTML content without network access
 
