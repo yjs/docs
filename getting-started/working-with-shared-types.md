@@ -2,13 +2,13 @@
 
 By now, we have learned how to make an editor collaborative and how to sync document updates using different providers. But we haven't covered the most unique feature of Yjs yet: Shared Types.
 
-Shared types allow you to make every aspect of your application collaborative. For example, you could sync your react-state using shared types. You can sync diagrams, drawings, and even whole 3d worlds using shared types to automatically resolve conflicts.
+Shared types allow you to make every aspect of your application collaborative. For example, you could sync your react-state using shared types. You can sync diagrams, drawings, and even whole 3d worlds using shared types to automatically resolve conflicts. 
 
-But a shared type is nothing complicated. It is just a common data type like [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map), or [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set). The only difference is that it automatically syncs & persists its state \(using the providers\) and that you can observe changes on shared types.
+Shared types are similar to common data types like [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map), or [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set). The only difference is that they automatically sync & persist their state \(using the providers\) and that you can observe them.
 
 We already learned about the Y.Text type that we "bound" to an editor instance to automatically sync a rich-text editor. Yjs supports many other shared types like Y.Array, Y.Map, and Y.Xml. A complete list, including documentation for each type, can be found in the [shared types section](../api/shared-types/).
 
-First, we define a shared type on a Yjs document. Then we can manipulate it and observe changes.
+Shared type instances must be connected to a Yjs document so we can sync them. First, we define a shared type on a Yjs document. Then we can manipulate it and observe changes.
 
 ```javascript
 import * as Y from 'yjs'
