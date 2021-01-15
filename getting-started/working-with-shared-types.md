@@ -43,7 +43,7 @@ yarray.insert(0, [subArray]) // => delta: [{ insert: [subArray] }]
 subArray.insert(0, ['nope']) // [observer not called]
 // You need to create an observer on subArray instead
 subArray.observe(event => { .. })
-// Or you simply observe deep changes on yarray (allowing you to observe child-events as well)
+// Alternatively you can observe deep changes on yarray (allowing you to observe child-events as well)
 yarray.observeDeep(events => { console.log('All deep events: ', events) })
 subArray.insert(0, ['this works']) // => All deep events: [..]
 // You can't insert the array at another place. A shared type can only exist in one place.
@@ -51,13 +51,13 @@ yarray.insert(0, [subArray]) // Throws exception!
 
 ```
 
-The other data types work similarly to Y.Array. For the complete documentation, you should have a look at the shared types section that covers each type and the event format in detail. 
+The other data types work similarly to Y.Array. The complete documentation is available in the shared types section that covers each type and the event format in detail. 
 
 {% page-ref page="../api/shared-types/" %}
 
 ### Transactions
 
-All changes must happen in a transaction. When you mutate a shared type without creating a transaction \(e.g. `yarray.insert(..)`\), Yjs will automatically create a transaction before manipulating the object. You can create transactions explicitly like this:
+All changes must happen in a transaction. When you mutate a shared type without creating a transaction \(e.g. `yarray.insert(..)`\), Yjs will automatically create a transaction before manipulating the shared object. You can create transactions explicitly like this:
 
 ```javascript
 const ydoc = new Y.Doc()
@@ -78,23 +78,23 @@ ydoc.transact(() => {
 
 ```
 
-Event handlers and observers are called after each transaction. If possible, you should bundle as many changes in a single transaction as possible. The advantage is that you reduce expensive observer calls.
+Event handlers and observers are called after each transaction. If possible, you should bundle as many changes in a single transaction as possible. The advantage is that you reduce expensive observer calls and create fewer updates that are sent to other peers.
 
 Yjs fires events in the following order:
 
 * `ydoc.on('beforeTransaction', event => { .. })` -  Called before any transaction, allowing you to store relevant information before changes happen.
 * Now the transaction function is executed.
 * `ydoc.on('beforeObserverCalls', event => {})`
-* `ytype.observe(event => { .. })` -  All observers are called.
-* `ytype.observeDeep(event => { .. })` -  All deep observers are called. 
-* `ydoc.on('afterTransaction', event => {})` 
+* `ytype.observe(event => { .. })` - Observers are called.
+* `ytype.observeDeep(event => { .. })` -  Deep observers are called. 
+* `ydoc.on('afterTransaction', event => {})` - Called after each transaction.
 * `ydoc.on('update', update => { .. })` - This update message is propagated by the providers.
 
 Especially when manipulating many objects, it makes sense to reduce the creation of update messages. So use transactions whenever possible.
 
 ### Managing multiple collaborative documents in a shared type
 
-We often want to manage multiple collaborative documents in a single Yjs document. For example, we would like to create & delete documents from a list of documents. You can manage multiple documents using shared types. In the following demo project, I implemented functionality to add & delete documents. The list of all documents is updated in real-time as well. 
+We often want to manage multiple collaborative documents in a single Yjs document. You can manage multiple documents using shared types. In the following demo project, I implemented functionality to add & delete documents. The list of all documents is updated in real-time as well. 
 
 {% embed url="https://stackblitz.com/edit/y-quill-doc-list" %}
 
@@ -106,7 +106,7 @@ You could extend the above demo project to ..
 
 * .. be able to delete specific documents
 * .. have a collaborative document-name. You could introduce a Y.Map that holds the document-name, the document-content, and the creation-date.
-* .. extend the document list to a fully-fledged file system.
+* .. extend the document list to a fully-fledged file system based on shared types.
 
 ### Collaborative Drawing App
 
@@ -114,7 +114,9 @@ You could extend the above demo project to ..
 
 ### Conclusion
 
-Shared types are not just great for collaborative editing. They are a unique kind of data structure that can be used to sync any kind of state across servers, browsers, and [soon also native applications](https://github.com/yjs/yrs).  Yjs is focused on creating collaborative applications and gives you all the tools you need to create complex applications that can compete with Google Workspace. But they might also be useful in high-performance computing for sharing state across threads, or in gaming for syncing data to remote clients as fast as possible. Since Yjs & Shared Types don't depend on a central server, these data structures are the ideal building block for decentralized, privacy-focused applications as well.
+Shared types are not just great for collaborative editing. They are a unique kind of data structure that can be used to sync any kind of state across servers, browsers, and [soon also native applications](https://github.com/yjs/yrs).  Yjs is well suited for creating collaborative applications and gives you all the tools you need to create complex applications that can compete with Google Workspace. But shared types might be useful in high-performance computing as well for sharing state across threads; or in gaming for syncing data to remote clients directly without a roundtrip to a server. Since Yjs & shared types don't depend on a central server, these data structures are the ideal building blocks for decentralized, privacy-focused applications as well. 
+
+I hope that this section gave you some inspiration for using shared types. Now you can c
 
 ### 
 
