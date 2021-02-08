@@ -4,7 +4,7 @@ description: How to sync documents with other peers.
 
 # Document Updates
 
-Changes on the shared document are encoded into _document updates_. Document updates are _commutative, associative,_ and _idempotent_. This means that you can apply them in any order and multiple times. All clients will sync up when they received all document updates. In Yjs, clients can also sync up by computing a state vector and then exchanging the differences.
+Changes on the shared document are encoded into binary encoded \(highly compressed\) _document updates_. Document updates are _commutative, associative,_ and _idempotent_. This means that you can apply them in any order and multiple times. All clients will sync up when they received all document updates.
 
 ## Update API
 
@@ -12,13 +12,29 @@ Changes on the shared document are encoded into _document updates_. Document upd
     Apply a document update on the shared document. Optionally you can specify `transactionOrigin` that will be stored on `transaction.origin` and `ydoc.on('update', (update, origin) => ..)`.
 
 **`Y.encodeStateAsUpdate(Y.Doc, [encodedTargetStateVector:Uint8Array]): Uint8Array`**   
-    Encode the document state as a single update message that can be applied on the remote document. Optionally, specify the target state vector to only write the differences to the update message.
+    Encode the document state as a single update message that can be applied on the remote document. Optionally, specify the target state vector to only write the missing differences to the update message.
 
 **`Y.encodeStateVector(Y.Doc): Uint8Array`**   
-    Computes the state vector and encodes it into an Uint8Array.
+    Computes the state vector and encodes it into an Uint8Array. A state vector describes the state of the local client. The remote client can use this to exchange only the missing differences.
 
 **`ydoc.on('update', eventHandler: function(update: Uint8Array, origin: any, doc: Y.Doc))`**   
     Listen to incremental updates on the Yjs document. This is part of the [Y.Doc API](y.doc.md#event-handler).  Send the computed incremental update to all connected clients, or store it in a database.
+
+**`Y.logUpdate(Uint8Array)`** \(experimental\)  
+    Log the contents of a document update to the console. This utility function is only meant for debugging and understanding the Yjs document format. It is marked as experimental because it might be changed or removed at any time.
+
+## Alternative Update API
+
+It is possible to sync clients and compute delta updates without loading the Yjs document to memory. Yjs exposes an API to compute the differences directly on the binary document updates. This allows you to sync efficiently while only maintaining the compressed binary-encoded document state in-memory.  [\(see example\)](document-updates.md#example-syncing-clients-without-loading-the-y-doc)
+
+**`Y.mergeUpdates(Array<Uint8Array>): Uint8Array`**   
+    Merge several document updates into a single document update while removing duplicate information. The merged document update is always smaller than the separate updates because of the compressed encoding.
+
+**`Y.encodeStateVectorFromUpdate(Uint8Array): Uint8Array`**   
+    Computes the state vector from a document update and encodes it into an Uint8Array.
+
+**`Y.diffUpdate(update: Uint8Array, stateVector: Uint8Array): Uint8Array`**   
+    Encode the missing differences to another update message. This function works similarly to `Y.encodeStateAsUpdate(ydoc, stateVector)` but works on updates instead.
 
 ## Examples
 
@@ -45,7 +61,7 @@ doc2.getArray('myarray').get(0) // => 'Hello doc2, you got this?'
 
 Yjs internally maintains a [state vector](https://github.com/yjs/yjs#State-Vector) that denotes the next expected clock from each client. In a different interpretation, it holds the number of modifications created by each client. When two clients sync, you can either exchange the complete document structure or only the differences by sending the state vector to compute the differences.
 
-**Example: Sync two clients by exchanging the complete document structure**
+#### **Example: Sync two clients by exchanging the complete document structure**
 
 ```javascript
 const state1 = Y.encodeStateAsUpdate(ydoc1)
@@ -54,7 +70,7 @@ Y.applyUpdate(ydoc1, state2)
 Y.applyUpdate(ydoc2, state1)
 ```
 
-**Example: Sync two clients by computing the differences**
+#### **Example: Sync two clients by computing the differences**
 
 This example shows how to sync two clients with a minimal amount of data exchanged by computing the differences using the state vector of the remote client. Syncing clients using the state vector requires another roundtrip but can save a lot of bandwidth.
 
@@ -65,6 +81,27 @@ const diff1 = Y.encodeStateAsUpdate(ydoc1, stateVector2)
 const diff2 = Y.encodeStateAsUpdate(ydoc2, stateVector1)
 Y.applyUpdate(ydoc1, diff2)
 Y.applyUpdate(ydoc2, diff1)
+```
+
+#### Example: Syncing clients without loading the Y.Doc
+
+```javascript
+// encode the current state as a binary buffer
+let currentState1 = Y.encodeStateAsUpdate(ydoc1)
+let currentState2 = Y.encodeStateAsUpdate(ydoc2)
+// now we can continue syncing clients without
+// using the Y.Doc
+ydoc1.destroy()
+ydoc2.destroy()
+
+const stateVector1 = Y.encodeStateVectorFromUpdate(currentState1)
+const stateVector2 = Y.encodeStateVectorFromUpdate(currentState2)
+const diff1 = Y.diffUpdate(currentState1, stateVector2)
+const diff2 = Y.diffUpdate(currentState2, stateVector1)
+
+// sync clients
+currentState1 = Y.mergeUpdates([currentState1, diff2])
+currentState1 = Y.mergeUpdates([currentState2, diff1])
 ```
 
 ### Example: Base64 encoding
