@@ -150,7 +150,11 @@ This sends a debounced callback to `localhost:3000` 2 seconds after receiving an
 
 ### Scaling
 
-\[todo\]
+These are mere suggestions on how you could scale your server environment. You can use the y-websocket server implementation as a baseline to implement your own scaling approach.
+
+**Option 1:** Websocket servers communicate with each other via a PubSub server. A room is represented by a PubSub channel. The downside of this approach is that the same shared document may be handled by many servers. But the upside is that this approach is fault-tolerant, does not have a single point of failure, and is fit for route balancing.
+
+**Option 2:** Sharding with _consistent hashing_. Each document is handled by a unique server. This pattern requires an entity, like etcd, that performs regular health checks and manages servers. Based on the list of available servers \(which is managed by etcd\) a proxy calculates which server is responsible for each requested document. The disadvantage of this approach is that load distribution may not be fair. Still, this approach may be the preferred solution if you want to store the shared document in a database - e.g. for indexing.
 
 {% page-ref page="../database-provider/y-redis.md" %}
 
