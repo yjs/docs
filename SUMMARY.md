@@ -19,6 +19,7 @@
   * [Monaco](ecosystem/editor-bindings/monaco.md)
   * [Quill](ecosystem/editor-bindings/quill.md)
   * [CodeMirror](ecosystem/editor-bindings/codemirror.md)
+  * [TipTap2](ecosystem/editor-bindings/tiptap2.md)
   * [Remirror](ecosystem/editor-bindings/remirror.md)
 * [Connection Provider](ecosystem/connection-provider/README.md)
   * [y-websocket](ecosystem/connection-provider/y-websocket.md)
