@@ -15,11 +15,6 @@ const ydoc = new Y.Doc()
 
 // Method 1: Define a top-level type
 const ytext = ydoc.getText('my text type') 
-// Method 2: Define Y.Text that can be included into the Yjs document
-const ytextNested = new Y.Text()
-
-// Nested types can be included as content into any other shared type
-ytext.set('my nested text', ytextNested)
 
 // Common methods
 ytext.insert(0, 'abc') // insert three elements
