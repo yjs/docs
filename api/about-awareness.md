@@ -53,10 +53,10 @@ awareness = provider.awareness
     Get all awareness states \(remote and local\). Maps from `clientID` to awareness state. The clientID is usually the `ydoc.clientID`.
 
 **`awareness.on('update', ({ added: Array, updated: Array removed: Array }, [transactionOrigin:any]) => ..)`**  
-    Listen to remote and local state changes. Get notified when a state is either added, updated, or removed.
+    Listen to remote and local awareness changes. This event is called even when the awareness state does not change but is only updated to notify other users that this client is still online. Use this event if you want to propagate awareness state to other users.
 
 **`awareness.on('change', ({ added: Array, updated: Array removed: Array }, [transactionOrigin:any]) => ..)`**  
-    Listen to remote and local awareness changes. This event is called even when the awareness state does not change but is only updated to notify other users that this client is still online. Use this event if you want to propagate awareness state to other users.
+    Listen to remote and local state changes. Get notified when a state is either added, updated, or removed.
 
 ## Awareness Protocol
 
