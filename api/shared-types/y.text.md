@@ -19,7 +19,7 @@ const ytext = ydoc.getText('my text type')
 const ytextNested = new Y.Text()
 
 // Nested types can be included as content into any other shared type
-ytext.set('my nested text', ytextNested)
+ydoc.getMap('another shared structure').set('my nested text', ytextNested)
 
 // Common methods
 ytext.insert(0, 'abc') // insert three elements
