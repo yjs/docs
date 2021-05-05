@@ -32,31 +32,31 @@ awareness = provider.awareness
 ```
 
 **`awareness = new awarenessProtocol.Awareness(ydoc: Y.Doc)`**  
-    Create a new awareness instance.
+Create a new awareness instance.
 
 **`awareness.clientID: number`**  
-    A unique identifier that identifies this client. 
+A unique identifier that identifies this client.
 
 **`awareness.destroy()`**  
-    Destroy the awareness instance and all associated state and event-handlers.
+Destroy the awareness instance and all associated state and event-handlers.
 
 **`awareness.getLocalState(): Object<string, any> | null`**  
-    Get the local awareness state.
+Get the local awareness state.
 
 **`awareness.setLocalState(state: Object<string, any>)`**  
-    Set or update the local awareness state. Set `null` to mark the local client as offline. The `state` object must be a key-value store that maps to JSON-encodable values.
+Set or update the local awareness state. Set `null` to mark the local client as offline. The `state` object must be a key-value store that maps to JSON-encodable values.
 
 **`awareness.setLocalStateField(string, any)`**  
-    Only set or update a single key-value pair in the local awareness state.
+Only set or update a single key-value pair in the local awareness state.
 
 **`awareness.getStates(): Map<string, Object<string, any>>`**  
-    Get all awareness states \(remote and local\). Maps from `clientID` to awareness state. The clientID is usually the `ydoc.clientID`.
+Get all awareness states \(remote and local\). Maps from `clientID` to awareness state. The clientID is usually the `ydoc.clientID`.
 
 **`awareness.on('update', ({ added: Array, updated: Array removed: Array }, [transactionOrigin:any]) => ..)`**  
-    Listen to remote and local awareness changes. This event is called even when the awareness state does not change but is only updated to notify other users that this client is still online. Use this event if you want to propagate awareness state to other users.
+Listen to remote and local awareness changes. This event is called even when the awareness state does not change but is only updated to notify other users that this client is still online. Use this event if you want to propagate awareness state to other users.
 
 **`awareness.on('change', ({ added: Array, updated: Array removed: Array }, [transactionOrigin:any]) => ..)`**  
-    Listen to remote and local state changes. Get notified when a state is either added, updated, or removed.
+Listen to remote and local state changes. Get notified when a state is either added, updated, or removed.
 
 ## Awareness Protocol
 
@@ -65,13 +65,13 @@ The awareness protocol is implemented by most providers. It allows you to use th
 ### Awareness Protocol API
 
 **`awarenessProtocol.encodeAwarenessUpdate(awareness: Awareness, clients: Array<number>): Uint8Array`**  
-    Encode the awareness states of the specified clients into an update encoded as `Uint8Array`.
+Encode the awareness states of the specified clients into an update encoded as `Uint8Array`.
 
 **`awarenessProtocol.applyAwarenessUpdate(awareness: Awareness, update: Uint8array)`**  
-    Apply an awareness update created with `encodeAwarenessUpdate` to an instance of the Awareness CRDT.
+Apply an awareness update created with `encodeAwarenessUpdate` to an instance of the Awareness CRDT.
 
 **`awarenessProtocol.removeAwarenessStates(awareness: Awareness, clients: Array<number>, origin: any)`**  
-    Remove the awareness states of the specified clients. This will call the `update` and the `change` event handler of the Awareness CRDT. Sometimes you want to mark yourself or others as offline. As soon as you know that a client is offline, you should call this function. It is not part of the Awareness CRDT, because it should only be used by the provider that implements awareness.
+Remove the awareness states of the specified clients. This will call the `update` and the `change` event handler of the Awareness CRDT. Sometimes you want to mark yourself or others as offline. As soon as you know that a client is offline, you should call this function. It is not part of the Awareness CRDT, because it should only be used by the provider that implements awareness.
 
 ### Adding Awareness Support to a Provider
 

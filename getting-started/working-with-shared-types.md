@@ -55,6 +55,21 @@ The other data types work similarly to Y.Array. The complete documentation is av
 
 {% page-ref page="../api/shared-types/" %}
 
+### Caveats
+
+There are some things that are not possible with shared types, but that are possible with normal data types. Most importantly, it is not possible to move a type that was inserted into a Yjs document to a different location. The other important caveat is that you shouldn't modify JSON that you inserted or retrieved from a shared type. Yjs doesn't clone the inserted objects to improve performance. So when you modify a JSON object, you will actually change the internal representation of Yjs without notifying other peers of that change.
+
+```javascript
+// 1. An inserted array must not be moved to a different location
+yarray.insert(0, ymap.get("my other array") as Y.Array) // will throw an error
+// 2. It is discouraged to modify JSON that is inserted or retrieved from a Yjs type
+//    This might lead to documents that don't synchronize anymore.
+const myObject = { val: 0 }
+ymap.set(0, myObject)
+ymap.get(0).val = 1 // Doesn't throw an error, but is highly discouraged
+myobject.val = 2 // Also doesn't throw an error, but is also discouraged.
+```
+
 ### Transactions
 
 All changes must happen in a transaction. When you mutate a shared type without creating a transaction \(e.g. `yarray.insert(..)`\), Yjs will automatically create a transaction before manipulating the shared object. You can create transactions explicitly like this:
