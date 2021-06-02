@@ -77,6 +77,9 @@ for (const paragraph of yxmlFragment.createTreeWalker(yxml => yxml.nodeName === 
 **`yxmlFragment.clone(): Y.XmlFragment`**  
     Clone all values into a fresh Y.XmlFragment instance. The returned type can be included into the Yjs document.
 
+** toDOM():DocumentFragment **
+    Transforms this type and all children to new DOM elements.
+
 **`yxmlFragment.observe(function(Y.XmlEvent, Transaction))`**  
     Registers a change observer that will be called synchronously every time this shared type is modified. In the case this type is modified in the observer call, the event listener will be called again after the current event listener returns.
 
