@@ -14,7 +14,7 @@ It is really hard to track who is using Yjs. If you are using Yjs in a productiv
 
 {% embed url="https://github.com/SwiftLaTeX/SwiftLaTeX" %}
 
-{% embed url="https://pluxbox.com/" %}
+{% embed url="https://pluxbox.com/theme/yjs" %}
 
 {% embed url="https://legendkeeper.com/" %}
 
