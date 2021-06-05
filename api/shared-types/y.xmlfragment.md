@@ -14,16 +14,19 @@ const ydoc = new Y.Doc()
 // You can define a Y.XmlFragment as a top-level type or a nested type
 
 // Method 1: Define a top-level type
-const yxmlFragment = ydoc.getXmlFragment('my xml-fragment type')
+const yxmlFragment = ydoc.getXmlFragment('fragment-name')
 // Method 2: Define Y.XmlFragment that can be included into the Yjs document
-const yxmlNested = new Y.XmlFragment()
+const yxmlNested = new Y.XmlFragment('fragment-name')
 
 // Common methods
 const yxmlText = new Y.XmlText()
 yxmlFragment.insert(0, [yxmlText])
 yxmlFragment.firstChild === yxmlText
-yxmlFragment.insertAfter(yxmlText, new Y.XmlElement())
+yxmlFragment.insertAfter(yxmlText, [new Y.XmlElement('node-name')])
 yxmlFragment.get(0) === yxmlText // => true
+
+//show result in dev console
+console.log(yxmlFragment.toDOM())
 ```
 
 ## API
