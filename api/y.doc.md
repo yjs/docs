@@ -23,7 +23,7 @@ You can specify an optional `origin` parameter that is stored on `transaction.or
 **`doc.get(string, Y.[TypeClass]): [Type]`**  
     Get a top-level instance of a shared type.
 
-**`doc.toArray(string = ''): Y.Array`**  
+**`doc.getArray(string = ''): Y.Array`**  
     Define a shared Y.Array type. Is equivalent to `y.get(string, Y.Array)`.
 
 **`doc.getMap(string = ''): Y.Map`**  
