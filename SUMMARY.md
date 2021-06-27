@@ -21,6 +21,7 @@
   * [CodeMirror](ecosystem/editor-bindings/codemirror.md)
   * [TipTap2](ecosystem/editor-bindings/tiptap2.md)
   * [Remirror](ecosystem/editor-bindings/remirror.md)
+  * [Slate](https://github.com/BitPhinix/slate-yjs/)
 * [Connection Provider](ecosystem/connection-provider/README.md)
   * [y-websocket](ecosystem/connection-provider/y-websocket.md)
   * [y-webrtc](ecosystem/connection-provider/y-webrtc.md)

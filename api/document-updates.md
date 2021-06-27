@@ -8,35 +8,35 @@ Changes on the shared document are encoded into binary encoded \(highly compress
 
 ## Update API
 
-**`Y.applyUpdate(Y.Doc, update:Uint8Array, [transactionOrigin:any])`**   
-    Apply a document update on the shared document. Optionally you can specify `transactionOrigin` that will be stored on `transaction.origin` and `ydoc.on('update', (update, origin) => ..)`.
+**`Y.applyUpdate(Y.Doc, update:Uint8Array, [transactionOrigin:any])`**  
+Apply a document update on the shared document. Optionally you can specify `transactionOrigin` that will be stored on `transaction.origin` and `ydoc.on('update', (update, origin) => ..)`.
 
-**`Y.encodeStateAsUpdate(Y.Doc, [encodedTargetStateVector:Uint8Array]): Uint8Array`**   
-    Encode the document state as a single update message that can be applied on the remote document. Optionally, specify the target state vector to only write the missing differences to the update message.
+**`Y.encodeStateAsUpdate(Y.Doc, [encodedTargetStateVector:Uint8Array]): Uint8Array`**  
+Encode the document state as a single update message that can be applied on the remote document. Optionally, specify the target state vector to only write the missing differences to the update message.
 
-**`Y.encodeStateVector(Y.Doc): Uint8Array`**   
-    Computes the state vector and encodes it into an Uint8Array. A state vector describes the state of the local client. The remote client can use this to exchange only the missing differences.
+**`Y.encodeStateVector(Y.Doc): Uint8Array`**  
+Computes the state vector and encodes it into an Uint8Array. A state vector describes the state of the local client. The remote client can use this to exchange only the missing differences.
 
-**`ydoc.on('update', eventHandler: function(update: Uint8Array, origin: any, doc: Y.Doc))`**   
-    Listen to incremental updates on the Yjs document. This is part of the [Y.Doc API](y.doc.md#event-handler).  Send the computed incremental update to all connected clients, or store it in a database.
+**`ydoc.on('update', eventHandler: function(update: Uint8Array, origin: any, doc: Y.Doc))`**  
+Listen to incremental updates on the Yjs document. This is part of the [Y.Doc API](y.doc.md#event-handler). Send the computed incremental update to all connected clients, or store it in a database.
 
 **`Y.logUpdate(Uint8Array)`** \(experimental\)  
-    Log the contents of a document update to the console. This utility function is only meant for debugging and understanding the Yjs document format. It is marked as experimental because it might be changed or removed at any time.
+Log the contents of a document update to the console. This utility function is only meant for debugging and understanding the Yjs document format. It is marked as experimental because it might be changed or removed at any time.
 
 ## Alternative Update API
 
-It is possible to sync clients and compute delta updates without loading the Yjs document to memory. Yjs exposes an API to compute the differences directly on the binary document updates. This allows you to sync efficiently while only maintaining the compressed binary-encoded document state in-memory.  [\(see example\)](document-updates.md#example-syncing-clients-without-loading-the-y-doc)
+It is possible to sync clients and compute delta updates without loading the Yjs document to memory. Yjs exposes an API to compute the differences directly on the binary document updates. This allows you to sync efficiently while only maintaining the compressed binary-encoded document state in-memory. [\(see example\)](document-updates.md#example-syncing-clients-without-loading-the-y-doc)
 
 Note that this feature only merges document updates and doesn't garbage-collect deleted content. You still need to load the document to a Y.Doc to reduce the document size.
 
-**`Y.mergeUpdates(Array<Uint8Array>): Uint8Array`**   
-    Merge several document updates into a single document update while removing duplicate information. The merged document update is always smaller than the separate updates because of the compressed encoding.
+**`Y.mergeUpdates(Array<Uint8Array>): Uint8Array`**  
+Merge several document updates into a single document update while removing duplicate information. The merged document update is always smaller than the separate updates because of the compressed encoding.
 
-**`Y.encodeStateVectorFromUpdate(Uint8Array): Uint8Array`**   
-    Computes the state vector from a document update and encodes it into an Uint8Array.
+**`Y.encodeStateVectorFromUpdate(Uint8Array): Uint8Array`**  
+Computes the state vector from a document update and encodes it into an Uint8Array.
 
-**`Y.diffUpdate(update: Uint8Array, stateVector: Uint8Array): Uint8Array`**   
-    Encode the missing differences to another update message. This function works similarly to `Y.encodeStateAsUpdate(ydoc, stateVector)` but works on updates instead.
+**`Y.diffUpdate(update: Uint8Array, stateVector: Uint8Array): Uint8Array`**  
+Encode the missing differences to another update message. This function works similarly to `Y.encodeStateAsUpdate(ydoc, stateVector)` but works on updates instead.
 
 ## Examples
 
@@ -108,7 +108,7 @@ currentState2 = Y.mergeUpdates([currentState2, diff1])
 
 ### Example: Base64 encoding
 
-We compress document updates to a highly compressed binary format. Therefore, document updates are represented as [Uint8Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array). An `Uint8Array` represents binary data similarly to a [NodeJS' Buffer](https://nodejs.org/api/buffer.html) . The difference is that `Uint8Array` is available in all JavaScript environments. The catch is that you can't [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)/[`JSON.parse`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) the data because there is no JSON representation for binary data.  However, most communication protocols support binary data. If you still need to transform the data into a string, you can use [Base64 encoding](https://en.wikipedia.org/wiki/Base64). For example, by using the [`js-base64`](https://www.npmjs.com/package/js-base64) library:
+We compress document updates to a highly compressed binary format. Therefore, document updates are represented as [Uint8Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array). An `Uint8Array` represents binary data similarly to a [NodeJS' Buffer](https://nodejs.org/api/buffer.html) . The difference is that `Uint8Array` is available in all JavaScript environments. The catch is that you can't [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)/[`JSON.parse`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) the data because there is no JSON representation for binary data. However, most communication protocols support binary data. If you still need to transform the data into a string, you can use [Base64 encoding](https://en.wikipedia.org/wiki/Base64). For example, by using the [`js-base64`](https://www.npmjs.com/package/js-base64) library:
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -129,6 +129,4 @@ npm install js-base64
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
