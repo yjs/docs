@@ -76,7 +76,7 @@ const ytext = ydoc.getText('quill')
 
 // Create an editor-binding which
 // "binds" the quill editor to a Y.Text type.
-const binding = new QuillBinding(quill, ytext)
+const binding = new QuillBinding(ytext, quill)
 ```
 
 The `ytext` object is a shared data structure for representing text. It also supports formatting attributes \(i.e. **bold** and _italic_\). Yjs automatically resolves concurrent changes on shared data so we don't have to worry about conflict resolution anymore. Then we synchronize `ytext` with the `quill` editor and keep them in-sync using the `QuillBinding`. Almost all editor bindings work like this. You can simply exchange the editor binding if you switch to another editor.
