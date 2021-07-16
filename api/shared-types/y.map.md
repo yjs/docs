@@ -63,7 +63,7 @@ ymap.delete('prop-name')
     Returns an [Iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) of values only. This allows you to iterate through the values only `for (const value of ymap.values()) { ... }` or insert all values into an array `Array.from(ymap.values())`.
 
 **`ymap.keys(): Iterator`**  
-    Returns an [Iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) of keys only. This allows you to iterate through the keys only `for (const key of ymap.key()) { ... }` or insert all keys into an array `Array.from(ymap.keys())`.
+    Returns an [Iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) of keys only. This allows you to iterate through the keys only `for (const key of ymap.keys()) { ... }` or insert all keys into an array `Array.from(ymap.keys())`.
 
 **`ymap.clone(): Y.Map`**  
     Clone all values into a fresh Y.Map instance. The returned type can be included into the Yjs document.
