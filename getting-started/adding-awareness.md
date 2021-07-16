@@ -24,7 +24,7 @@ The following example shows how you retrieve the Awareness CRDT from the network
 // All of our network providers implement the awareness crdt
 const awareness = provider.awareness
 
-// You can observe when a any user updated their awareness information
+// You can observe when a user updates their awareness information
 awareness.on('change', changes => {
   // Whenever somebody updates their awareness information,
   // we log all awareness information from all users.
@@ -33,7 +33,7 @@ awareness.on('change', changes => {
 
 // You can think of your own awareness information as a key-value store.
 // We update our "user" field to propagate relevant user information.
-awareness.setLocalAwarenessField('user', {
+awareness.setLocalStateField('user', {
   // Define a print name that should be displayed
   name: 'Emmanuelle Charpentier',
   // Define a color that should be associated to the user:
