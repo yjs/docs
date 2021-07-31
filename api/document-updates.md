@@ -59,6 +59,28 @@ doc1.getArray('myarray').insert(0, ['Hello doc2, you got this?'])
 doc2.getArray('myarray').get(0) // => 'Hello doc2, you got this?'
 ```
 
+You can also use a transaction to specify an origin.  This may help to eliminate redundant packets from hitting the wire. 
+
+```javascript
+doc1.on('update', (update, origin) => {
+  if (origin !== 'doc1') {
+    return
+  }
+  Y.applyUpdate(doc2, update)
+})
+
+doc2.on('update', (update, origin) => {
+  if (origin !== 'doc2') {
+    return
+  }
+  Y.applyUpdate(doc1, update)
+})
+
+doc1.transact( ()=> {
+  doc1.getArray('myarray').insert(0, ['Hello doc2, you got this?'])
+}, 'doc1')
+```
+
 ### Syncing clients
 
 Yjs internally maintains a [state vector](https://github.com/yjs/yjs#State-Vector) that denotes the next expected clock from each client. In a different interpretation, it holds the number of modifications created by each client. When two clients sync, you can either exchange the complete document structure or only the differences by sending the state vector to compute the differences.
