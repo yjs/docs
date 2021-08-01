@@ -12,7 +12,7 @@ This guide will walk you through the main concepts of Yjs. First, we are going t
 If you are impatient jump to the live demo at the bottom of the page 😉
 {% endhint %}
 
-Let's get started by deciding on an editor to use.  Yjs doesn't ship with a customized editor. There are already a lot of awesome open-source editors projects out there. Yjs supports many of them using extensions. Editor bindings are a concept in Yjs that allow us to bind the state of a third-party editor to a synceable Yjs document. This is a list of all known editor bindings:
+Let's get started by deciding on an editor to use. Yjs doesn't ship with a customized editor. There are already a lot of awesome open-source editors projects out there. Yjs supports many of them using extensions. Editor bindings are a concept in Yjs that allow us to bind the state of a third-party editor to a synceable Yjs document. This is a list of all known editor bindings:
 
 {% page-ref page="../ecosystem/editor-bindings/" %}
 
@@ -136,9 +136,7 @@ By combining Yjs with providers and editor bindings we created our first collabo
 
 But for now, let's enjoy what we built. I included the same fiddle twice so you can observe the editors sync in real-time. Aware, the editor content is synced with all users visiting this page!
 
-{% embed url="https://stackblitz.com/edit/y-quill?embed=1&file=index.ts&hideExplorer=1" %}
+{% embed url="https://stackblitz.com/edit/y-quill?embed=1&file=index.ts&hideExplorer=1" caption="" %}
 
-{% embed url="https://stackblitz.com/edit/y-quill?embed=1&file=index.ts&hideExplorer=1" %}
-
-
+{% embed url="https://stackblitz.com/edit/y-quill?embed=1&file=index.ts&hideExplorer=1" caption="" %}
 

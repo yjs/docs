@@ -130,3 +130,37 @@ npm install js-base64
 {% endtab %}
 {% endtabs %}
 
+### Example: Building a custom provider
+
+A "provider" is what connects a Yjs document to other clients \(through a network\) or that synchronizes a document with a database. The section [syncing clients](document-updates.md#syncing-clients) explains several concepts to sync a Yjs document with another client or server. Once the initial states are synchronized, we want to synchronize incremental updates by listening to the update and forwarding them to the other clients. We can use the concept of _transaction origin_ to determine whether we need to forward a document update to the database/network. I recommend using the following template for custom provider implementation.
+
+```javascript
+class Provider {
+  /**
+   * @param {Y.Doc} ydoc
+   */
+  constructor (ydoc) {
+    ydoc.on('update', (update, origin) => {
+      // ignore updates applied by this provider
+      if (origin !== this) {
+        // this update was produced either locally or by another provider. 
+        this.sendUpdate(update)
+      }
+    })
+    // listen to an event that fires when a remote update is received
+    this.on('update', update => {
+      Y.applyUpdate(ydoc, update, this) // the third parameter sets the transaction-origin
+    })
+  }
+  ..
+}
+```
+
+Note that this is not the only way to filter updates. You could also use a `isLocal` flag or use a [lib0/mutex](https://github.com/dmonad/lib0). However, it is recommended that all providers set the transaction origin which makes it easier for developers to debug where an update comes from.
+
+
+
+
+
+
+
