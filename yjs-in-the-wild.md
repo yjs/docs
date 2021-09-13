@@ -18,3 +18,4 @@ It is really hard to track who is using Yjs. If you are using Yjs in a productiv
 
 {% embed url="https://legendkeeper.com/" caption="" %}
 
+{% embed url="https://collaboration.vertexvis.io/" caption="" %}
