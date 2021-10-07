@@ -131,7 +131,7 @@ You could extend the above demo project to ..
 
 Shared types are not just great for collaborative editing. They are a unique kind of data structure that can be used to sync any kind of state across servers, browsers, and [soon also native applications](https://github.com/yjs/yrs).  Yjs is well suited for creating collaborative applications and gives you all the tools you need to create complex applications that can compete with Google Workspace. But shared types might be useful in high-performance computing as well for sharing state across threads; or in gaming for syncing data to remote clients directly without a roundtrip to a server. Since Yjs & shared types don't depend on a central server, these data structures are the ideal building blocks for decentralized, privacy-focused applications as well. 
 
-I hope that this section gave you some inspiration for using shared types. Now you can c
+I hope that this section gave you some inspiration for using shared types.
 
 ### 
 
