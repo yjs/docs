@@ -51,7 +51,7 @@ The event handler is called right before every transaction.
 The event handler is called right before observers on shared types are called.
 
 **`doc.on('afterTransaction', function(tr: Transaction, doc: Y.Doc))`**  
-The event handler is called right before every transaction.
+The event handler is called right after every transaction.
 
 **`doc.on('update', function(update: Uint8Array, origin: any, doc: Y.Doc, tr: Transaction))`**  
 Listen to update messages on the shared document. As long as all update messages are propagated to all users, everyone will eventually consent to the same state. See more about this in the [Document Updates](document-updates.md) chapter.  
