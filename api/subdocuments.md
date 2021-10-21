@@ -7,7 +7,7 @@ description: Embedding Yjs documents into Yjs documents
 Yjs documents can be embedded into shared types. This allows you to manage vast amounts of Yjs documents as part of a root document.
 
 ```javascript
-// CLient One
+// Client One
 const rootDoc = new Y.Doc()
 const folder = rootDoc.getMap()
 
@@ -20,7 +20,7 @@ An obvious use-case is to manage documents in a folder structure. Each note coul
 
 ```javascript
 // Client Two
-const subDoc = rootDoc.getMap().get('my-document.text')
+const subDoc = rootDoc.getMap().get('my-document.txt')
 const subDocText = subDoc.getText()
 subDocText.toString() // => "" - content is empty
 
