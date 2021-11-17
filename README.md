@@ -10,7 +10,7 @@ description: >-
 This documentation website is a work in progress. The best source of information is still the [Yjs README](https://github.com/yjs/yjs) and the [yjs-demos](https://github.com/yjs/yjs-demos) repository.
 {% endhint %}
 
-Yjs is a high-performance [CRDT](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) for building collaborative applications that sync automatically.
+Yjs is a high-performance [CRDT](https://en.wikipedia.org/wiki/Conflict-free\_replicated\_data\_type) for building collaborative applications that sync automatically.
 
 It exposes its internal CRDT model as _shared data types_ that can be manipulated concurrently. Shared types are similar to common data types like `Map` and `Array`. They can be manipulated, fire events when changes happen, and automatically merge without merge conflicts.
 
@@ -46,17 +46,29 @@ console.log(ymap.toJSON()) // => { keyA: 'valueA', keyB: 'valueB' }
 
 Yjs supports several popular text and rich-text editors. We are working with different projects to enable collaboration-support through Yjs.
 
-{% page-ref page="ecosystem/editor-bindings/prosemirror.md" %}
+{% content-ref url="ecosystem/editor-bindings/prosemirror.md" %}
+[prosemirror.md](ecosystem/editor-bindings/prosemirror.md)
+{% endcontent-ref %}
 
-{% page-ref page="ecosystem/editor-bindings/tiptap.md" %}
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
 
-{% page-ref page="ecosystem/editor-bindings/monaco.md" %}
+{% content-ref url="ecosystem/editor-bindings/monaco.md" %}
+[monaco.md](ecosystem/editor-bindings/monaco.md)
+{% endcontent-ref %}
 
-{% page-ref page="ecosystem/editor-bindings/quill.md" %}
+{% content-ref url="ecosystem/editor-bindings/quill.md" %}
+[quill.md](ecosystem/editor-bindings/quill.md)
+{% endcontent-ref %}
 
-{% page-ref page="ecosystem/editor-bindings/codemirror.md" %}
+{% content-ref url="ecosystem/editor-bindings/codemirror.md" %}
+[codemirror.md](ecosystem/editor-bindings/codemirror.md)
+{% endcontent-ref %}
 
-{% page-ref page="ecosystem/editor-bindings/remirror.md" %}
+{% content-ref url="ecosystem/editor-bindings/remirror.md" %}
+[remirror.md](ecosystem/editor-bindings/remirror.md)
+{% endcontent-ref %}
 
 ## Network Agnostic 📡
 
@@ -72,11 +84,10 @@ Another interesting application for Yjs as a data model for decentralized and [L
 
 Yjs is a modular approach that allows the community to make any editor collaborative using any network technology. It has thought-through solutions for almost all shared-editing related problems.
 
-We built a rich ecosystem of extensions around Yjs. There are ready-to-use editor integrations for many popular \(rich-\)text editors, adapters to different network technologies \(like WebRTC, WebSocket, or Hyper\), and persistence providers that store document updates in a database.
+We built a rich ecosystem of extensions around Yjs. There are ready-to-use editor integrations for many popular (rich-)text editors, adapters to different network technologies (like WebRTC, WebSocket, or Hyper), and persistence providers that store document updates in a database.
 
 ## Unmatched Performance🚀
 
 Yjs is the fastest CRDT implementation, by far.
 
-{% embed url="https://github.com/dmonad/crdt-benchmarks" caption="" %}
-
+{% embed url="https://github.com/dmonad/crdt-benchmarks" %}

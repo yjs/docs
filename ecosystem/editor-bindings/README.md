@@ -2,17 +2,27 @@
 
 Yjs supports several popular text and rich-text editors. This works by "binding" a shared type to a specific editor instance. Don't worry, you don't have to work with Yjs types if you just want to make something collaborative. But in case you want to build more complex applications, like a folder structure of collaborative documents, read the section about [shared types](../../api/shared-types/).
 
-{% page-ref page="prosemirror.md" %}
+{% content-ref url="prosemirror.md" %}
+[prosemirror.md](prosemirror.md)
+{% endcontent-ref %}
 
-{% page-ref page="tiptap.md" %}
+{% content-ref url="tiptap2.md" %}
+[tiptap2.md](tiptap2.md)
+{% endcontent-ref %}
 
-{% page-ref page="monaco.md" %}
+{% content-ref url="monaco.md" %}
+[monaco.md](monaco.md)
+{% endcontent-ref %}
 
-{% page-ref page="quill.md" %}
+{% content-ref url="quill.md" %}
+[quill.md](quill.md)
+{% endcontent-ref %}
 
-{% page-ref page="codemirror.md" %}
+{% content-ref url="codemirror.md" %}
+[codemirror.md](codemirror.md)
+{% endcontent-ref %}
 
-{% page-ref page="remirror.md" %}
-
-
+{% content-ref url="remirror.md" %}
+[remirror.md](remirror.md)
+{% endcontent-ref %}
 

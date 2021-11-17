@@ -33,28 +33,28 @@ console.log(yxmlFragment.toDOM())
 
 **`const yxmlElement = Y.XmlElement(nodeName: string)`**
 
-**`yxmlElement.nodeName: string`**  
+**`yxmlElement.nodeName: string`**\
 The name of this Y.XmlElement as a String.
 
-**`yxmlElement.prevSibling: Y.XmlElement | Y.XmlText | null`**  
+**`yxmlElement.prevSibling: Y.XmlElement | Y.XmlText | null`**\
 The previous sibling of this type. Is null if this is the first child of its parent.
 
-**`yxmlElement.nextSibling: Y.XmlElement | Y.XmlText | null`**  
+**`yxmlElement.nextSibling: Y.XmlElement | Y.XmlText | null`**\
 The next sibling of this type. Is null if this is the last child of its parent.
 
-**`yxmlElement.toString(): string`**  
+**`yxmlElement.toString(): string`**\
 Returns the XML-String representation of this element. E.g. `"<div height="30px"></div>"`
 
-**`yxmlElement.setAttribute(name: string, value: string | Y.AbstractType)`**  
+**`yxmlElement.setAttribute(name: string, value: string | Y.AbstractType)`**\
 Set an XML attribute. Technically, the value can only be a string. But we also allow shared types. In this case, the XML type can't be properly converted to a string.
 
-**`yxmlElement.removeAttribute(name: string)`**  
+**`yxmlElement.removeAttribute(name: string)`**\
 Remove an XML attribute.
 
-**`yxmlElement.getAttribute(name: string): string | Y.AbstractType`**  
+**`yxmlElement.getAttribute(name: string): string | Y.AbstractType`**\
 Retrieve an XML attribute.
 
-**`yxmlElement.getAttributes(): Object<string, string | Y.AbstractType>`**  
+**`yxmlElement.getAttributes(): Object<string, string | Y.AbstractType>`**\
 Retrieve all XML attributes.
 
 ## Observing changes: Y.XmlEvent
@@ -97,11 +97,12 @@ yxmlElement.deleteAttribute('key') // Attribute "key" was deleted. New value: un
 
 ### Y.XmlEvent API
 
-\[todo\]
+\[todo]
 
 describe childListChanged and attributesChanged
 
 See [Y.Event](../y.event.md) API. The API is inherited from Y.Event.I'm still in the process of moving the documentation to this place. For now, you can find the API docs in the README:
 
-{% embed url="https://github.com/yjs/yjs\#API" caption="API DOCS" %}
-
+{% embed url="https://github.com/yjs/yjs#API" %}
+API DOCS
+{% endembed %}

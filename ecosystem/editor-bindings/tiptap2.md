@@ -1,14 +1,12 @@
-# TipTap2
+# TipTap
 
-TipTap2 is a ProseMirror based editor that integrates Yjs as the collaborative editing solution. It has a rich ecosystem of extensions and integrates well into web frameworks \(React, Vue, ..\).
+TipTap is a ProseMirror based editor that integrates Yjs as the collaborative editing solution. It has a rich ecosystem of extensions and integrates well into web frameworks (React, Vue, ..).
 
-{% embed url="https://next.tiptap.dev/" %}
+{% embed url="https://tiptap.dev" %}
 
-They have a great getting-started guide for collaborative editing with Yjs & TipTap2:
+They have a great getting-started guide for collaborative editing with Yjs & TipTap:
 
-{% embed url="https://next.tiptap.dev/guide/collaborative-editing" %}
-
-
+{% embed url="https://tiptap.dev/guide/collaborative-editing" %}
 
 
 

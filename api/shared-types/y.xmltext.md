@@ -38,21 +38,19 @@ yxmlText.nextSibling
 
 **`const yxmlText = Y.XmlText()`**
 
-**`yxmlText.prevSibling: Y.XmlElement | Y.XmlText | null`**  
-    The previous sibling of this type. Is null if this is the first child of its parent.
+**`yxmlText.prevSibling: Y.XmlElement | Y.XmlText | null`**\
+****    The previous sibling of this type. Is null if this is the first child of its parent.
 
-**`yxmlText.nextSibling: Y.XmlElement | Y.XmlText | null`**  
-    The next sibling of this type. Is null if this is the last child of its parent.
+**`yxmlText.nextSibling: Y.XmlElement | Y.XmlText | null`**\
+****    The next sibling of this type. Is null if this is the last child of its parent.
 
-**`yxmlText.toString(): string`**  
-    Returns the XML-String representation of this element. Formatting attributes are transformed to XML-tags. If the formatting attribute contains an object, the key-value pairs will be used as attributes. E.g.
+**`yxmlText.toString(): string`**\
+****    Returns the XML-String representation of this element. Formatting attributes are transformed to XML-tags. If the formatting attribute contains an object, the key-value pairs will be used as attributes. E.g.
 
 ```javascript
 ymxlText.insert(0, "my link", { a: { href: 'https://..' } })
 ymxlText.toString() // => <a href="https://..">my link</a>
 ```
-
-
 
 
 

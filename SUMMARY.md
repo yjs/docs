@@ -15,11 +15,10 @@
 
 * [Editor Bindings](ecosystem/editor-bindings/README.md)
   * [ProseMirror](ecosystem/editor-bindings/prosemirror.md)
-  * [TipTap](ecosystem/editor-bindings/tiptap.md)
+  * [TipTap](ecosystem/editor-bindings/tiptap2.md)
   * [Monaco](ecosystem/editor-bindings/monaco.md)
   * [Quill](ecosystem/editor-bindings/quill.md)
   * [CodeMirror](ecosystem/editor-bindings/codemirror.md)
-  * [TipTap2](ecosystem/editor-bindings/tiptap2.md)
   * [Remirror](ecosystem/editor-bindings/remirror.md)
   * [Slate](https://github.com/BitPhinix/slate-yjs/)
 * [Connection Provider](ecosystem/connection-provider/README.md)
@@ -62,13 +61,12 @@
 * [Lessons Learned](tutorials/lessons-learned.md)
 * [Custom Provider](tutorials/creating-a-custom-provider.md)
 
-## 🌎 External Resources <a id="other-resources"></a>
+## 🌎 External Resources <a href="other-resources" id="other-resources"></a>
 
 * [Talks, Podcasts, and Blogs](other-resources/talks-and-podcasts.md)
-* [About CRDTs](https://crdt.tech/)
+* [About CRDTs](https://crdt.tech)
 * [CRDT Benchmarks](https://github.com/dmonad/crdt-benchmarks)
-* [Yjs Discussion Board](https://discuss.yjs.dev/)
+* [Yjs Discussion Board](https://discuss.yjs.dev)
 * [Yjs Chat](https://gitter.im/Yjs/community)
-* [Kevin's Blog](https://blog.kevinjahns.de/)
+* [Kevin's Blog](https://blog.kevinjahns.de)
 * [Awesome People ⭐](https://github.com/yjs/yjs/stargazers)
-

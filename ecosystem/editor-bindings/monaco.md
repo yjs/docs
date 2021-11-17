@@ -2,7 +2,7 @@
 
 [Monaco](https://microsoft.github.io/monaco-editor/) is the editor that powers VS Code. The [y-monaco](https://github.com/yjs/y-monaco/) extension makes it collaborative.
 
-{% embed url="https://github.com/yjs/y-monaco/" caption="" %}
+{% embed url="https://github.com/yjs/y-monaco/" %}
 
 {% embed url="https://microsoft.github.io/monaco-editor/" %}
 
@@ -50,17 +50,17 @@ npm i monaco-editor yjs y-monaco
 
 #### Live Demo
 
-Unfortunately, we can't show a live-code example on this website because the editor requires a build-step that online-IDEs don't support. Maybe you can give it a try? Anyway, we still have a live demo available on a different website \(simply open it in two different tabs\). 
+Unfortunately, we can't show a live-code example on this website because the editor requires a build-step that online-IDEs don't support. Maybe you can give it a try? Anyway, we still have a live demo available on a different website (simply open it in two different tabs).&#x20;
 
-{% embed url="https://demos.yjs.dev/monaco/monaco.html" caption="Live Demo of the y-monaco editor binding" %}
+{% embed url="https://demos.yjs.dev/monaco/monaco.html" %}
+Live Demo of the y-monaco editor binding
+{% endembed %}
 
 #### Demo Code
 
-The [yjs-demos](https://github.com/yjs/yjs-demos) repository contains several demos. Simply download the repository you are interested in \(e.g. the `monaco` folder\) and run `npm install && npm start` to run the demo.
+The [yjs-demos](https://github.com/yjs/yjs-demos) repository contains several demos. Simply download the repository you are interested in (e.g. the `monaco` folder) and run `npm install && npm start` to run the demo.
 
 {% embed url="https://github.com/yjs/yjs-demos/tree/master/monaco" %}
-
-
 
 
 

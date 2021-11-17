@@ -19,26 +19,26 @@ undoManager.redo()
 ytext.toString() // => 'abc'
 ```
 
-**`const undoManager = new Y.UndoManager(scope: Y.AbstractType | Array<Y.AbstractType> [, {captureTimeout: number, trackedOrigins: Set<any>, deleteFilter: function(item):boolean}])`**  
-    Creates a new Y.UndoManager on a scope of shared types. If any of the specified types, or any of its children is modified, the UndoManager adds a reverse-operation on its stack. Optionally, you may specify `trackedOrigins` to filter specific changes. By default, all local changes will be tracked. The UndoManager merges edits that are created within a certain `captureTimeout` \(defaults to 500ms\). Set it to 0 to capture each change individually.
+**`const undoManager = new Y.UndoManager(scope: Y.AbstractType | Array<Y.AbstractType> [, {captureTimeout: number, trackedOrigins: Set<any>, deleteFilter: function(item):boolean}])`**\
+&#x20;   Creates a new Y.UndoManager on a scope of shared types. If any of the specified types, or any of its children is modified, the UndoManager adds a reverse-operation on its stack. Optionally, you may specify `trackedOrigins` to filter specific changes. By default, all local changes will be tracked. The UndoManager merges edits that are created within a certain `captureTimeout` (defaults to 500ms). Set it to 0 to capture each change individually.
 
-**`undoManager.undo()`**  
-    Undo the last operation on the UndoManager stack. The reverse operation will be put on the redo-stack.
+**`undoManager.undo()`**\
+****    Undo the last operation on the UndoManager stack. The reverse operation will be put on the redo-stack.
 
-**`undoManager.redo()`**  
-    Redo the last operation on the redo-stack. I.e. the previous redo is reversed.
+**`undoManager.redo()`**\
+****    Redo the last operation on the redo-stack. I.e. the previous redo is reversed.
 
-**`undoManager.stopCapturing()`**  
-    Call `stopCapturing()` to ensure that the next operation that is put on the UndoManager is not merged with the previous operation.
+**`undoManager.stopCapturing()`**\
+****    Call `stopCapturing()` to ensure that the next operation that is put on the UndoManager is not merged with the previous operation.
 
-**`undoManager.clear()`**  
-    Delete all captured operations from the undo & redo stack.
+**`undoManager.clear()`**\
+****    Delete all captured operations from the undo & redo stack.
 
-**`undoManager.on('stack-item-added', {stackItem: { meta: Map<any,any>, type: 'undo'|'redo'}}`**  
-    Register an event that is called when a `StackItem` is added to the undo- or the redo-stack.
+**`undoManager.on('stack-item-added', {stackItem: { meta: Map<any,any>, type: 'undo'|'redo'}}`**\
+****    Register an event that is called when a `StackItem` is added to the undo- or the redo-stack.
 
-**`on('stack-item-popped', { stackItem: { meta: Map<any,any> }, type: 'undo' | 'redo' })`**  
-    Register an event that is called when a `StackItem` is popped from the undo- or the redo-stack.
+**`on('stack-item-popped', { stackItem: { meta: Map<any,any> }, type: 'undo' | 'redo' })`**\
+&#x20;   Register an event that is called when a `StackItem` is popped from the undo- or the redo-stack.
 
 ### **Example: Stop Capturing**
 
@@ -119,4 +119,3 @@ undoManager.on('stack-item-popped', event => {
   restoreCursorLocation(event.stackItem.meta.get('cursor-location'))
 })
 ```
-
