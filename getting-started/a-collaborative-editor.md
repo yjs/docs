@@ -16,12 +16,15 @@ Let's get started by deciding on an editor to use. Yjs doesn't ship with a custo
 
 {% page-ref page="../ecosystem/editor-bindings/" %}
 
-For the purpose of this guide, we are going to use the [Quill](https://quilljs.com/) editor - a great rich-text editor that is easy to setup. For a complete reference on how to setup Quill I refer to [their documentation](https://quilljs.com/playground/).
+For the purpose of this guide, we are going to use the [Quill](https://quilljs.com/) editor - a great rich-text editor that is easy to setup. For a complete reference on how to setup Quill I refer to [their documentation](https://quilljs.com/playground/). If you first require a basic introduction in npm and bundles, please refer to the [webpack getting started guide](https://webpack.js.org/guides/getting-started/) and additionally setting up a [development server](https://webpack.js.org/configuration/dev-server/).
 
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
 import Quill from 'quill'
+import QuillCursors from 'quill-cursors'
+
+Quill.register('modules/cursors', QuillCursors);
 
 const quill = new Quill(document.querySelector('#editor'), {
   modules: {
@@ -54,7 +57,7 @@ const quill = new Quill(document.querySelector('#editor'), {
 
 {% tab title="Install" %}
 ```bash
-npm i quill
+npm i quill quill-cursors
 ```
 {% endtab %}
 {% endtabs %}
