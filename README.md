@@ -50,8 +50,8 @@ Yjs supports several popular text and rich-text editors. We are working with dif
 [prosemirror.md](ecosystem/editor-bindings/prosemirror.md)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="ecosystem/editor-bindings/tiptap2.md" %}
+[tiptap2.md](ecosystem/editor-bindings/tiptap2.md)
 {% endcontent-ref %}
 
 {% content-ref url="ecosystem/editor-bindings/monaco.md" %}
