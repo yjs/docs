@@ -157,16 +157,21 @@ npm install js-base64
 A "provider" is what connects a Yjs document to other clients \(through a network\) or that synchronizes a document with a database. The section [syncing clients](document-updates.md#syncing-clients) explains several concepts to sync a Yjs document with another client or server. Once the initial states are synchronized, we want to synchronize incremental updates by listening to the update and forwarding them to the other clients. We can use the concept of _transaction origin_ to determine whether we need to forward a document update to the database/network. I recommend using the following template for custom provider implementation.
 
 ```javascript
-class Provider {
+import * as Y from 'yjs'
+import { Observable } from 'lib0/observable'
+
+class Provider extends Observable {
   /**
    * @param {Y.Doc} ydoc
    */
   constructor (ydoc) {
+    super()
+
     ydoc.on('update', (update, origin) => {
       // ignore updates applied by this provider
       if (origin !== this) {
         // this update was produced either locally or by another provider. 
-        this.sendUpdate(update)
+        this.emit('update', [update])
       }
     })
     // listen to an event that fires when a remote update is received
