@@ -89,7 +89,7 @@ doc.on('subdocs', ({ added: Set<Y.Doc>, removed: Set<Y.Doc>, loaded: Set<Y.Doc> 
 })
 ```
 
-Providers \(e.g. y-websocket, y-indexeddb\) are responsible for syncing subdocuments. Not all providers support subdocuments yet. A simple method to implement lazy-loading documents is to create a provider instance to the `doc.guid`-room once a document is loaded:
+Providers (e.g. y-websocket, y-indexeddb) are responsible for syncing subdocuments. Not all providers support subdocuments yet. A simple method to implement lazy-loading documents is to create a provider instance to the `doc.guid`-room once a document is loaded:
 
 ```javascript
 doc.on('subdocs', ({ loaded }) => {
@@ -100,3 +100,4 @@ doc.on('subdocs', ({ loaded }) => {
 doc.getSubdocs() // Get the Set<Y.Doc> of all subdocuments
 ```
 
+\
