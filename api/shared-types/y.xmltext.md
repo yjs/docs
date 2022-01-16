@@ -11,7 +11,7 @@ import * as Y from 'yjs'
 
 const ydoc = new Y.Doc()
 
-// You can define a Y.Text as a top-level type or a nested type
+// You can define a Y.XmlText as a top-level type or a nested type
 
 // Method 1: Define a top-level type
 const yxmlText = ydoc.get('my text type', Y.XmlText) 
