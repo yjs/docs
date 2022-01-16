@@ -9,7 +9,7 @@ import * as Y from 'yjs'
 
 const ydoc = new Y.Doc()
 
-// You can define a Y.XmlFragment as a top-level type or a nested type
+// You can define a Y.XmlElement as a top-level type or a nested type
 
 // Method 1: Define a top-level type
 const yxmlFragment = ydoc.getXmlFragment('fragment-name')
