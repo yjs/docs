@@ -90,7 +90,7 @@ ymap.observe(event => {
 ydoc.transact(() => {
   ymap.set('food', 'pencake')
   ymap.set('number', 31)
-}) // => changes: Map({ number: { action: 'added' }, food: { action: 'updated', oldValue: undefined } })
+}) // => changes: Map({ number: { action: 'added' }, food: { action: 'updated', oldValue: 'pizza' } })
 ```
 
 Event handlers and observers are called after each transaction. If possible, you should bundle as many changes in a single transaction as possible. The advantage is that you reduce expensive observer calls and create fewer updates that are sent to other peers.
