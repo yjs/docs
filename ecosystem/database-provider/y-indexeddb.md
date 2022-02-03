@@ -44,7 +44,7 @@ npm i --save y-indexeddb
 **`provider = new IndexeddbPersistence(docName: string, ydoc: Y.Doc)`**\
 ****    Create a y-indexeddb persistence provider. Specify `docName` as a unique string that identifies this document. In most cases, you want to use the same identifier that is used as the room-name in the connection provider.
 
-**`provider.on('synced'', function(idbPersistence: IndexeddbPersistence))`**\
+**`provider.on('synced', function(idbPersistence: IndexeddbPersistence))`**\
 ****    The `"synced"` event is fired when the connection to the database has been established and all available content has been loaded. The event is also fired when no content is available yet.
 
 **`provider.set(key: any, value: any): Promise<any>`**\
