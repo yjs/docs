@@ -12,9 +12,9 @@ const ydoc = new Y.Doc()
 // You can define a Y.XmlFragment as a top-level type or a nested type
 
 // Method 1: Define a top-level type
-const yxmlFragment = ydoc.getXmlFragment('fragment-name')
+const yxmlFragment = ydoc.getXmlFragment('my xml fragment')
 // Method 2: Define Y.XmlFragment that can be included into the Yjs document
-const yxmlNested = new Y.XmlFragment('fragment-name')
+const yxmlNested = new Y.XmlFragment()
 
 // Common methods
 const yxmlText = new Y.XmlText()
@@ -78,7 +78,7 @@ for (const paragraph of yxmlFragment.createTreeWalker(yxml => yxml.nodeName === 
 **`yxmlFragment.clone(): Y.XmlFragment`**\
 Clone all values into a fresh Y.XmlFragment instance. The returned type can be included into the Yjs document.
 
-** toDOM():DocumentFragment ** Transforms this type and all children to new DOM elements.
+&#x20;**toDOM():DocumentFragment** Transforms this type and all children to new DOM elements.
 
 **`yxmlFragment.observe(function(Y.XmlEvent, Transaction))`**\
 Registers a change observer that will be called synchronously every time this shared type is modified. In the case this type is modified in the observer call, the event listener will be called again after the current event listener returns.

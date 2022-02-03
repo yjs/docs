@@ -12,9 +12,11 @@ const ydoc = new Y.Doc()
 // You can define a Y.XmlElement as a top-level type or a nested type
 
 // Method 1: Define a top-level type
-const yxmlFragment = ydoc.getXmlFragment('fragment-name')
+// Note that the nodeName is always "undefined"
+// when defining an XmlElement as a top-level type.
+const yxmlElement = ydoc.get('prop-name', Y.XmlElement)
 // Method 2: Define Y.XmlFragment that can be included into the Yjs document
-const yxmlNested = new Y.XmlFragment('fragment-name')
+const yxmlNested = new Y.XmlElement('node-name')
 
 // Common methods
 const yxmlText = new Y.XmlText()
