@@ -22,12 +22,12 @@ yxmlText.set('my nested text', ytextNested)
 // Common methods (also available in Y.Text)
 yxmlText.insert(0, 'abc') // insert three elements
 yxmlText.format(1, 2, { bold: true }) // delete second element 
-yxmlText.toString() // => 'abc'
 yxmlText.toDelta() // => [{ insert: 'a' }, { insert: 'bc', attributes: { bold: true }}]
 
-// methods only available in Y.Text
-yxmlText.toString() // => "a<bold>bc</bold>"
+// Methods specific to Y.XmlText
+yxmlText.prevSibling
 yxmlText.nextSibling
+yxmlText.toString() // => "a<bold>bc</bold>"
 ```
 
 ## API
