@@ -63,7 +63,18 @@ Retrieve the n-th element.
 Retrieve a range of content starting from index `start` (inclusive) to index `end` (exclusive). Negative indexes can be used to indicate offsets from the end of the Y.XmlFragment. I.e. `yxmlFragment.slice(-1)` returns the last element. `yxmlFragment.slice(0, -1)` returns all but the last element. Works similarly to the [Array.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/slice) method.
 
 **`yxmlFragment.toJSON(): String`**\
-Retrieve the JSON representation of this type. The result is an XML string.
+Retrieve the JSON representation of this type. The result is a concatinated string of XML elements.
+
+Example: 
+```xml
+<element1>foo</element1><element2>bar</element2>
+```
+If the fragment contains more than one XML element, the output will not be a valid XML; It will need to be placed inside a container element to be valid and parsable.
+Example: 
+```js
+const validDocument = `<wrapper>${yXmlFragment.toJSON()}</wrapper>`
+```
+
 
 **`yxmlFragment.createTreeWalker(filter: function(yxml: Y.XmlElement | Y.XmlText): boolean): Iterable`**\
 Create an [Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols) that walks through all children of this type (not only direct children). The returned iterable returns every element that the filter accepts. I.e. the following code iterates through all `Y.XmlElements` that have the node-name `'p'`.
