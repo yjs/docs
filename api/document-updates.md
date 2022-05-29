@@ -25,7 +25,7 @@ Log the contents of a document update to the console. This utility function is o
 
 ## Alternative Update API
 
-It is possible to sync clients and compute delta updates without loading the Yjs document to memory. Yjs exposes an API to compute the differences directly on the binary document updates. This allows you to sync efficiently while only maintaining the compressed binary-encoded document state in-memory. [\(see example\)](document-updates.md#example-syncing-clients-without-loading-the-y-doc)
+It is possible to sync clients and compute delta updates without loading the Yjs document to memory. Yjs exposes an API to compute the differences directly on the binary document updates. This allows you to sync efficiently while only maintaining the compressed binary-encoded document state in-memory. [\(see example\)](document-updates.md#example-syncing-clients-without-loading-the-y.doc)
 
 Note that this feature only merges document updates and doesn't garbage-collect deleted content. You still need to load the document to a Y.Doc to reduce the document size.
 
