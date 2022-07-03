@@ -21,6 +21,7 @@
   * [CodeMirror](ecosystem/editor-bindings/codemirror.md)
   * [Remirror](ecosystem/editor-bindings/remirror.md)
   * [Slate](https://github.com/BitPhinix/slate-yjs/)
+  * [Milkdown](https://milkdown.dev/)
 * [Connection Provider](ecosystem/connection-provider/README.md)
   * [y-websocket](ecosystem/connection-provider/y-websocket.md)
   * [y-webrtc](ecosystem/connection-provider/y-webrtc.md)
@@ -61,7 +62,7 @@
 * [Lessons Learned](tutorials/lessons-learned.md)
 * [Custom Provider](tutorials/creating-a-custom-provider.md)
 
-## 🌎 External Resources <a href="other-resources" id="other-resources"></a>
+## 🌎 External Resources <a href="#other-resources" id="other-resources"></a>
 
 * [Talks, Podcasts, and Blogs](other-resources/talks-and-podcasts.md)
 * [About CRDTs](https://crdt.tech)
