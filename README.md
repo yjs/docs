@@ -70,6 +70,10 @@ Yjs supports several popular text and rich-text editors. We are working with dif
 [remirror.md](ecosystem/editor-bindings/remirror.md)
 {% endcontent-ref %}
 
+{% content-ref url="ecosystem/editor-bindings/milkdown.md" %}
+[milkdown.md](ecosystem/editor-bindings/milkdown.md)
+{% endcontent-ref %}
+
 ## Network Agnostic 📡
 
 Yjs doesn't make any assumptions about the network technology you are using. As long as all changes eventually arrive, the documents will sync. The order in which document updates are applied doesn't matter.
