@@ -29,7 +29,7 @@ npm i y-indexeddb --save
 {% endtab %}
 {% endtabs %}
 
-Now every change is persisted to a local database. The next time you visit your site, your document will be loaded from the IndexedDB database. Only the latest changes are synced over the network provider.
+Now every change is persisted to a local database. The next time you visit your site, your document will be loaded from the IndexedDB database. Only the latest changes are synced over the database provider.
 
 You can listen to `synced` events that fire when your client loaded content from the IndexedDB database:
 
