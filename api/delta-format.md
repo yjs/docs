@@ -115,8 +115,8 @@ ydoc.transact(() => {
 }) // => [{ insert: [2, "abc", 3] }]
 
 ydoc.transact(() => {
-  yarray.insert(0, 'x')
-  yarray.insert(2, 'y')
+  yarray.insert(0, ['x'])
+  yarray.insert(2, ['y'])
 }) // => [{ insert: ['x'] }, { retain: 1 }, { insert: ['y'] }]
 ```
 
