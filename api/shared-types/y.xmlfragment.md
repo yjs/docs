@@ -63,7 +63,7 @@ Retrieve the n-th element.
 Retrieve a range of content starting from index `start` (inclusive) to index `end` (exclusive). Negative indexes can be used to indicate offsets from the end of the Y.XmlFragment. I.e. `yxmlFragment.slice(-1)` returns the last element. `yxmlFragment.slice(0, -1)` returns all but the last element. Works similarly to the [Array.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/slice) method.
 
 **`yxmlFragment.toJSON(): String`**\
-Retrieve the JSON representation of this type. The result is a concatinated string of XML elements.
+Retrieve the JSON representation of this type. The result is a concatenated string of XML elements.
 
 Example: 
 ```xml
