@@ -30,7 +30,7 @@ yarray.toArray() // => [1, 3]
 ## API
 
 **`Y.Array.from(Array<JSON | Uint8Array | Y.AbstractType>): Y.Array`**\
-&#x20;   An alternative constructor to create a Y.Array based on existing content.
+&#x20;   An alternative factory function to create a Y.Array based on existing content.
 
 **`yarray.doc: Y.Doc | null`** (readonly)\
 &#x20;   The Yjs document that this type is bound to. Is `null` when it is not bound yet.
