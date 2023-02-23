@@ -42,7 +42,7 @@ ytext.toDelta() // => [{ insert: 'a' }, { insert: 'bc', attributes: { bold: true
 **`ytext.length: number`** \(readonly\)  
     The length of the string in UTF-16 code units. Since JavaScripts' String implementation uses the same character encoding `ytext.toString().length === ytext.length`.
 
-**`ytext.insert(index: number, content: String[, format: Object<string,any>])`**  
+**`ytext.insert(index: number, content: string[, format: Object<string,any>])`**  
     Insert content at a specified `index`. Optionally, you may specify formatting attributes that are applied to the inserted string. By default, the formatting attributes before the insert position will be used.
 
 **`ytext.format(index: number, length: number, format: Object<string,any>)`**  
@@ -54,13 +54,13 @@ ytext.toDelta() // => [{ insert: 'a' }, { insert: 'bc', attributes: { bold: true
 **`ytext.delete(index: number, length: number)`**  
     Delete `length` characters starting from `index`.
 
-**`ytext.toString(): String`**  
+**`ytext.toString(): string`**  
     Retrieve the string-representation \(without formatting attributes\) from the Y.Text instance.
 
 **`ytext.toDelta(): Delta`**  
     Retrieve the Text-Delta-representation of the Y.Text instance. The Text-Delta is equivalent to [Quills' Delta format](https://quilljs.com/docs/delta/).
 
-**`ytext.toJSON(): String`**  
+**`ytext.toJSON(): string`**  
     Retrieves the string representation of the Y.Text instance.
 
 **`ytext.clone(): Y.Text`**  
