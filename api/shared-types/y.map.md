@@ -48,7 +48,7 @@ Returns true if an entry with the specified key exists. This method works simila
 **`ymap.toJSON(): Object<string,object|boolean|Array|string|number|Uint8Array>`**\
 Copies the `[key,value]` pairs of this Y.Map to a new Object. It transforms all shared types to JSON using their `toJSON` method.
 
-**`ymap.size`**\
+**`ymap.size: number`**\
 Returns the number of key/value pairs.
 
 **`ymap.forEach(value: any, key: string, map: Y.Map)`**\
