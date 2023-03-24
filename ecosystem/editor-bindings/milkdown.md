@@ -8,7 +8,7 @@ Milkdown Homepage
 
 They have a great getting-started guide for collaborative editing with Yjs & Milkdown:
 
-{% embed url="https://milkdown.dev/collaborative-editing" %}
+{% embed url="https://milkdown.dev/docs/guide/collaborative-editing" %}
 Getting Started Guide
 {% endembed %}
 
