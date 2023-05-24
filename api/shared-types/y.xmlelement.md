@@ -64,7 +64,7 @@ Retrieve all XML attributes.
 The `yxmlElement.observe` callback fires `Y.XmlEvent` events that you can use to calculate the changes that happened during a transaction. We use an adaption of the [Quill delta format](https://quilljs.com/docs/delta/) to calculate insertions & deletions of child-elements. Changes on the xml-attributes are expressed using the same API from [Y.Map](y.map.md#observing-changes-y-mapevent).
 
 ```javascript
-yxmlFragment.observe(yxmlElent => {
+yxmlFragment.observe(yxmlEvent => {
   yxmlEvent.target === yarray // => true
 
   // Observe when child-elements are added or deleted. 
