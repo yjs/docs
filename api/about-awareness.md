@@ -52,10 +52,10 @@ Only set or update a single key-value pair in the local awareness state.
 **`awareness.getStates(): Map<string, Object<string, any>>`**  
 Get all awareness states \(remote and local\). Maps from `clientID` to awareness state. The clientID is usually the `ydoc.clientID`.
 
-**`awareness.on('update', ({ added: Array, updated: Array removed: Array }, [transactionOrigin:any]) => ..)`**  
+**`awareness.on('update', ({ added: Array, updated: Array, removed: Array }, [transactionOrigin:any]) => ..)`**  
 Listen to remote and local awareness changes. This event is called even when the awareness state does not change but is only updated to notify other users that this client is still online. Use this event if you want to propagate awareness state to other users.
 
-**`awareness.on('change', ({ added: Array, updated: Array removed: Array }, [transactionOrigin:any]) => ..)`**  
+**`awareness.on('change', ({ added: Array, updated: Array, removed: Array }, [transactionOrigin:any]) => ..)`**  
 Listen to remote and local state changes. Get notified when a state is either added, updated, or removed.
 
 ## Awareness Protocol
@@ -67,7 +67,7 @@ The awareness protocol is implemented by most providers. It allows you to use th
 **`awarenessProtocol.encodeAwarenessUpdate(awareness: Awareness, clients: Array<number>): Uint8Array`**  
 Encode the awareness states of the specified clients into an update encoded as `Uint8Array`.
 
-**`awarenessProtocol.applyAwarenessUpdate(awareness: Awareness, update: Uint8array)`**  
+**`awarenessProtocol.applyAwarenessUpdate(awareness: Awareness, update: Uint8array, origin: any)`**  
 Apply an awareness update created with `encodeAwarenessUpdate` to an instance of the Awareness CRDT.
 
 **`awarenessProtocol.removeAwarenessStates(awareness: Awareness, clients: Array<number>, origin: any)`**  
