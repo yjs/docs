@@ -14,5 +14,6 @@ Yjs supports several popular text and rich-text editors. This works by "binding"
 
 {% page-ref page="remirror.md" %}
 
+{% page-ref page="lexical.md" %}
 
 
