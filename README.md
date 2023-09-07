@@ -74,11 +74,15 @@ Yjs supports several popular text and rich-text editors. We are working with dif
 
 Yjs doesn't make any assumptions about the network technology you are using. As long as all changes eventually arrive, the documents will sync. The order in which document updates are applied doesn't matter.
 
-You can [integrate Yjs into your existing communication infrastructure](tutorials/creating-a-custom-provider.md), or use one of the [several existing network providers](ecosystem/connection-provider/) that allow you to jump-start your application backend.
+You can [integrate Yjs into your existing communication infrastructure](tutorials/creating-a-custom-provider.md) or use one of the [several existing network providers](ecosystem/connection-provider/) that allow you to jump-start your application backend.
 
-Scaling shared editing backends is not trivial. Most shared editing solutions depend on a single source of truth - a central server - to perform conflict resolution. Yjs doesn't need a central source of truth. This enables you to design the backend using ideas from distributed system architecture. In fact, Yjs can be scaled indefinitely as it is shown in the [y-redis section](tutorials/untitled-3.md).
+Scaling shared editing backends is not trivial. Most shared editing solutions depend on a single source of truth - a central server - to perform conflict resolution. Yjs doesn't need a central source of truth. This enables you to design the backend using ideas from distributed system architecture. In fact, Yjs can be scaled indefinitely, as it is shown in the [y-redis section](tutorials/untitled-3.md).
 
-Another interesting application for Yjs as a data model for decentralized and [Local-First software](https://www.inkandswitch.com/local-first.html).
+If you don't want to maintain your own backend, use [Liveblocks](https://liveblocks.io/yjs). It is a managed, scalable backend for Yjs with many additional features.
+
+Yjs is truly network agnostic and can be used as a data model for decentralized and [Local-First software](https://www.inkandswitch.com/local-first.html).
+
+Just start somewhere. Since the "network provider" is clearly separated from Yjs and the various integrations, it is pretty easy to switch to different providers.
 
 ## Rich Ecosystem 🔥
 
@@ -88,6 +92,6 @@ We built a rich ecosystem of extensions around Yjs. There are ready-to-use edito
 
 ## Unmatched Performance🚀
 
-Yjs is the fastest CRDT implementation, by far.
+Yjs is the fastest CRDT implementation by far.
 
 {% embed url="https://github.com/dmonad/crdt-benchmarks" %}
