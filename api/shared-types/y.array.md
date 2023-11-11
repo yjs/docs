@@ -18,8 +18,9 @@ const yarray = ydoc.getArray('my array type')
 // Method 2: Define Y.Array that can be included into the Yjs document
 const yarrayNested = new Y.Array()
 
-// Nested types can be included as content into any other shared type
-yarray.set('my nested array', yarrayNested)
+// Nested types can be included as content into any other shared type,
+// notice that a shared type can only exist once in a document.
+yarray.insert(0, [yarrayNested])
 
 // Common methods
 yarray.insert(0, [1, 2, 3]) // insert three elements
