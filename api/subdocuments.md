@@ -16,7 +16,7 @@ subDoc.getText().insert(0, 'some initial content')
 folder.set('my-document.txt', subDoc)
 ```
 
-An obvious use-case is to manage documents in a folder structure. Each node could be represented as a subdocument that is lazily loaded to memory when needed. By default, subdocuments are empty until they are explicitly loaded.
+An obvious use-case is to manage documents in a folder structure. Each document (potentially containing large amounts of rich-text content) could be represented as a subdocument that is lazily loaded to memory when needed. By default, subdocuments are empty until they are explicitly loaded.
 
 ```javascript
 // Client Two
