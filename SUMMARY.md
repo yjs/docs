@@ -26,6 +26,7 @@
   * [y-websocket](ecosystem/connection-provider/y-websocket.md)
   * [y-webrtc](ecosystem/connection-provider/y-webrtc.md)
   * [y-dat](ecosystem/connection-provider/y-hyper.md)
+  * [y-sweet](https://github.com/drifting-in-space/y-sweet)
   * [Liveblocks](https://liveblocks.io/yjs)
 * [Database Provider](ecosystem/database-provider/README.md)
   * [y-indexeddb](ecosystem/database-provider/y-indexeddb.md)
