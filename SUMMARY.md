@@ -22,6 +22,8 @@
   * [Remirror](ecosystem/editor-bindings/remirror.md)
   * [Milkdown](ecosystem/editor-bindings/milkdown.md)
   * [Slate](https://github.com/BitPhinix/slate-yjs/)
+  * [Lexical](ecosystem/editor-bindings/lexical.md)
+
 * [Connection Provider](ecosystem/connection-provider/README.md)
   * [y-websocket](ecosystem/connection-provider/y-websocket.md)
   * [y-webrtc](ecosystem/connection-provider/y-webrtc.md)

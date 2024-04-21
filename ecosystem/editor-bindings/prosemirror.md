@@ -4,7 +4,7 @@ description: Shared Editing with the ProseMirror Editor
 
 # ProseMirror
 
-[ProseMirror](https://prosemirror.net) is a fantastic toolkit to build your own richtext editor. [TipTap](broken-reference), [Remirror](remirror.md), and [Atlaskit ](https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page)are all based on ProseMirror. The [y-prosemirror](https://github.com/yjs/y-prosemirror/) module exports ProseMirror plugins that make any ProseMirror-based editor collaborative. The module even ensures that the document still conforms to the specified schema. The following demo shows how shared editing, cursors, shared undo/redo, and versions can be implemented using the ProseMirror editor toolkit.
+[ProseMirror](https://prosemirror.net) is a fantastic toolkit to build your own richtext editor. [TipTap](tiptap2.md), [Remirror](remirror.md), and [Atlaskit](https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page) are all based on ProseMirror. The [y-prosemirror](https://github.com/yjs/y-prosemirror/) module exports ProseMirror plugins that make any ProseMirror-based editor collaborative. The module even ensures that the document still conforms to the specified schema. The following demo shows how shared editing, cursors, shared undo/redo, and versions can be implemented using the ProseMirror editor toolkit.
 
 {% embed url="https://github.com/yjs/y-prosemirror/" %}
 
