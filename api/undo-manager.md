@@ -20,7 +20,7 @@ ytext.toString() // => 'abc'
 ```
 
 **`const undoManager = new Y.UndoManager(scope: Y.AbstractType | Array<Y.AbstractType> [, {captureTimeout: number, trackedOrigins: Set<any>, deleteFilter: function(item):boolean}])`**\
-&#x20;   Creates a new Y.UndoManager on a scope of shared types. If any of the specified types, or any of its children is modified, the UndoManager adds a reverse-operation on its stack. Optionally, you may specify `trackedOrigins` to track changes from different sources. By default, all local changes that don't specify an origin will be tracked. The UndoManager merges edits that are created within a certain `captureTimeout` (defaults to 500ms). Set it to 0 to capture each change individually.
+&#x20;   Creates a new Y.UndoManager on a scope of shared types. If any of the specified types, or any of its children is modified, the UndoManager adds a reverse-operation on its stack. Optionally, you may specify `trackedOrigins` to track changes from different sources. By default, all local changes that don't specify a transaction `origin` will be tracked. The UndoManager merges edits that are created within a certain `captureTimeout` (defaults to 500ms). Set it to 0 to capture each change individually.
 
 **`undoManager.undo()`**\
 &#x20;   Undo the last operation on the UndoManager stack. The reverse operation will be put on the redo-stack.
