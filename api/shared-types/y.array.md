@@ -60,6 +60,9 @@ yarray.toArray() // => [1, 3]
 **`yarray.slice([start: number [, end: number]]): Array<JSON | Uint8Array | Y.AbstractType>`**\
 &#x20;   Retrieve a range of content starting from index `start` (inclusive) to index `end` (exclusive). Negative indexes can be used to indicate offsets from the end of the Y.Array. I.e. `yarray.slice(-1)` returns the last element. `yarray.slice(0, -1)` returns all but the last element. Works similarly to the [Array.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/slice) method.
 
+**`yarray.toArray(): Array<JSON | Uint8Array | Y.AbstractType>`**\
+&#x20;   Copies the content of the Y.Array to a new Array.
+
 **`yarray.toJSON(): Array<JSON | Uint8Array>`**\
 &#x20;   Retrieve the JSON representation of this type. The result is a fresh Array that contains all Y.Array elements. Elements that are shared types are transformed to JSON as well, using their `toJSON` method. The result may contain Uint8Arrays which are not JSON-encodable.
 
