@@ -45,6 +45,9 @@ Deletes an entry with the specified key. This method works similarly to the [Map
 **`ymap.has(key: string): boolean`**\
 Returns true if an entry with the specified key exists. This method works similarly to the[ Map.has](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Map/has) method.
 
+**`ymap.clear()`**\
+Removes all elements from this `ymap`.
+
 **`ymap.toJSON(): Object<string,object|boolean|Array|string|number|Uint8Array>`**\
 Copies the `[key,value]` pairs of this Y.Map to a new Object. It transforms all shared types to JSON using their `toJSON` method.
 
