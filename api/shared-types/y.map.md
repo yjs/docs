@@ -23,6 +23,10 @@ ymap.set('my nested map', ymapNested)
 ymap.set('prop-name', 'value') // value can be anything json-encodable
 ymap.get('prop-name') // => 'value'
 ymap.delete('prop-name')
+
+// Powerful for simple stuff as toggles as well
+ymap.set('your-toggle', true)
+ymap.get('your-toggle') // => true
 ```
 
 ## API
