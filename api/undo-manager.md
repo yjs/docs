@@ -26,7 +26,7 @@ ytext.toString() // => 'abc'
 &#x20;   Undo the last operation on the UndoManager stack. The reverse operation will be put on the redo-stack.
 
 **`undoManager.redo()`**\
-&#x20;   Redo the last operation on the redo-stack. I.e. the previous redo is reversed.
+&#x20;   Redo the last operation on the redo-stack. I.e. the previous undo is reversed.
 
 **`undoManager.stopCapturing()`**\
 &#x20;   Call `stopCapturing()` to ensure that the next operation that is put on the UndoManager is not merged with the previous operation.
