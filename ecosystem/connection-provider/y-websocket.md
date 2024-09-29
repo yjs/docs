@@ -117,7 +117,7 @@ wsOpts = {
 Start a y-websocket server:
 
 ```bash
-PORT=1234 npx y-websocket-server
+HOST=localhost PORT=1234 npx y-websocket
 ```
 
 Since npm symlinks the `y-websocket-server` executable from your local `./node_modules/.bin` folder, you can simply run npx. The `PORT` environment variable defaults to 1234.
