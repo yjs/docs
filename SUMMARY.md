@@ -28,7 +28,7 @@
   * [y-webxdc](https://codeberg.org/webxdc/y-webxdc)
   * [y-dat](ecosystem/connection-provider/y-hyper.md)
   * [y-sweet](https://jamsocket.com/y-sweet)
-  * [Liveblocks](https://liveblocks.io/yjs)b 
+  * [Liveblocks](https://liveblocks.io/yjs)
 * [Database Provider](ecosystem/database-provider/README.md)
   * [y-indexeddb](ecosystem/database-provider/y-indexeddb.md)
   * [y-leveldb](ecosystem/database-provider/y-leveldb.md)
