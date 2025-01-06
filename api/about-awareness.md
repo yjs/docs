@@ -43,19 +43,19 @@ Destroy the awareness instance and all associated state and event-handlers.
 **`awareness.getLocalState(): Object<string, any> | null`**  
 Get the local awareness state.
 
-**`awareness.setLocalState(state: Object<string, any>)`**  
+**`awareness.setLocalState(state: Object<string, any> | null)`**  
 Set or update the local awareness state. Set `null` to mark the local client as offline. The `state` object must be a key-value store that maps to JSON-encodable values.
 
 **`awareness.setLocalStateField(string, any)`**  
 Only set or update a single key-value pair in the local awareness state.
 
-**`awareness.getStates(): Map<string, Object<string, any>>`**  
+**`awareness.getStates(): Map<number, Object<string, any>>`**  
 Get all awareness states \(remote and local\). Maps from `clientID` to awareness state. The clientID is usually the `ydoc.clientID`.
 
-**`awareness.on('update', ({ added: Array, updated: Array, removed: Array }, [transactionOrigin:any]) => ..)`**  
+**`awareness.on('update', ({ added: Array<number>, updated: Array<number>, removed: Array<number> }, [transactionOrigin:any]) => ..)`**  
 Listen to remote and local awareness changes. This event is called even when the awareness state does not change but is only updated to notify other users that this client is still online. Use this event if you want to propagate awareness state to other users.
 
-**`awareness.on('change', ({ added: Array, updated: Array, removed: Array }, [transactionOrigin:any]) => ..)`**  
+**`awareness.on('change', ({ added: Array<number>, updated: Array<number>, removed: Array<number> }, [transactionOrigin:any]) => ..)`**  
 Listen to remote and local state changes. Get notified when a state is either added, updated, or removed.
 
 ## Awareness Protocol
