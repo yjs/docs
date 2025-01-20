@@ -1,5 +1,5 @@
 ---
-description: A shared type similar with a similar API to global.Map
+description: A shared type with a similar API to global.Map
 ---
 
 # Y.Map
