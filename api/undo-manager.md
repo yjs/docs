@@ -74,21 +74,21 @@ const undoManager = new Y.UndoManager(ytext, {
 ytext.insert(0, 'abc')
 undoManager.undo()
 ytext.toString() // => 'abc' (does not track because origin `null` and not part
-                 //           of `trackedTransactionOrigins`)
+                 //           of `trackedOrigins`)
 ytext.delete(0, 3) // revert change
 
 doc.transact(() => {
   ytext.insert(0, 'abc')
 }, 42)
 undoManager.undo()
-ytext.toString() // => '' (tracked because origin is an instance of `trackedTransactionorigins`)
+ytext.toString() // => '' (tracked because origin is an instance of `trackedOrigins`)
 
 doc.transact(() => {
   ytext.insert(0, 'abc')
 }, 41)
 undoManager.undo()
 ytext.toString() // => '' (not tracked because 41 is not an instance of
-                 //        `trackedTransactionorigins`)
+                 //        `trackedOrigins`)
 ytext.delete(0, 3) // revert change
 
 doc.transact(() => {
@@ -96,7 +96,7 @@ doc.transact(() => {
 }, new CustomBinding())
 undoManager.undo()
 ytext.toString() // => '' (tracked because origin is a `CustomBinding` and
-                 //        `CustomBinding` is in `trackedTransactionorigins`)
+                 //        `CustomBinding` is in `trackedOrigins`)
 ```
 
 ### **Example: Add additional information to the StackItems**
