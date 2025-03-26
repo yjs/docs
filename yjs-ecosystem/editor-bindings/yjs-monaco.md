@@ -8,7 +8,7 @@
 
 ```text
 const ydoc = new Y.Doc()
-const provider = new WebsocketProvider('wss://demos.yjs.dev', 'monaco', ydoc) // or any other provider
+const provider = new WebsocketProvider('wss://demos.yjs.dev/ws', 'monaco', ydoc) // or any other provider
 const type = ydoc.getText('monaco')
 
 const editor = monaco.editor.create(
