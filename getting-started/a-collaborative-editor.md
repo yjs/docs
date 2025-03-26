@@ -105,7 +105,7 @@ import { WebsocketProvider } from 'y-websocket'
 
 // connect to the public demo server (not in production!)
 const provider = new WebsocketProvider(
-  'wss://demos.yjs.dev', 'quill-demo-room', ydoc
+  'wss://demos.yjs.dev/ws', 'quill-demo-room', ydoc
 )
 ```
 {% endtab %}
