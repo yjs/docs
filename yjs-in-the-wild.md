@@ -4,11 +4,16 @@ description: Companies using Yjs to achieve amazing collaborative experiences
 
 # Yjs in the Wild
 
-It is really hard to track who is using Yjs. If you are using Yjs in a productive app, show-off your project in [https://discuss.yjs.dev/](https://discuss.yjs.dev/) and I will add it to this list.
+Yjs is the most-used framework for building collaborative applications. It exceeds over [1M downloads / week](https://www.npmjs.com/package/yjs). The [Yjs README](https://github.com/yjs/yjs) contains a comprehensive list of known users of Yjs. Please create a PR to add your product to the list! &#x20;
 
-{% embed url="https://nimbusweb.me/" %}
+Below is a list of some featured users of Yjs.\
 
-{% embed url="http://www.relm.us/" %}
+
+* [https://affine.pro/](https://affine.pro/)
+* [https://gitbook.com](https://www.gitbook.com/)
+* [https://evernote.com/](https://evernote.com/)
+* [https://cargo.site/](https://cargo.site/)
+* [https://tiptap.dev/](https://tiptap.dev/)
 
 {% embed url="https://room.sh/" %}
 
