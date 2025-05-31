@@ -8,12 +8,15 @@ Yjs is the most-used framework for building collaborative applications. It excee
 
 Below is a list of some featured users of Yjs.\
 
+{% embed url="https://affine.pro/" %}
 
-* [https://affine.pro/](https://affine.pro/)
-* [https://gitbook.com](https://www.gitbook.com/)
-* [https://evernote.com/](https://evernote.com/)
-* [https://cargo.site/](https://cargo.site/)
-* [https://tiptap.dev/](https://tiptap.dev/)
+{% embed url="https://www.gitbook.com/" %}
+
+{% embed url="https://evernote.com/" %}
+
+{% embed url="https://cargo.site/" %}
+
+{% embed url="https://tiptap.dev/" %}
 
 {% embed url="https://room.sh/" %}
 
