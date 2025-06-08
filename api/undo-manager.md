@@ -41,7 +41,7 @@ ytext.toString() // => 'abc'
 &#x20;   Register an event handler that is called when a `StackItem` is popped from the undo- or the redo-stack.
 
 **`undoManager.on('stack-item-updated', function({stackItem, origin, type:'undo'|'redo', changedParentTypes}, undoManager))`**\
-&#x20;   Register an event handler that is called when a `StackItem` is updated from the undo- or the redo-stack.
+&#x20;   Register an event handler that is called when a `StackItem` is updated in the undo- or the redo-stack.
 
 ### **Example: Stop Capturing**
 
