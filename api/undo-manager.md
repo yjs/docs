@@ -34,11 +34,14 @@ ytext.toString() // => 'abc'
 **`undoManager.clear()`**\
 &#x20;   Delete all captured operations from the undo & redo stack.
 
-**`undoManager.on('stack-item-added', {stackItem: { meta: Map<any,any>, type: 'undo'|'redo'}}`**\
-&#x20;   Register an event that is called when a `StackItem` is added to the undo- or the redo-stack.
+**`undoManager.on('stack-item-added', function({stackItem, origin, type:'undo'|'redo', changedParentTypes}, undoManager))`**\
+&#x20;   Register an event handler that is called when a `StackItem` is added to the undo- or the redo-stack.
 
-**`on('stack-item-popped', { stackItem: { meta: Map<any,any> }, type: 'undo' | 'redo' })`**\
-&#x20;   Register an event that is called when a `StackItem` is popped from the undo- or the redo-stack.
+**`undoManager.on('stack-item-popped', function({stackItem, origin, type:'undo'|'redo', changedParentTypes}, undoManager))`**\
+&#x20;   Register an event handler that is called when a `StackItem` is popped from the undo- or the redo-stack.
+
+**`undoManager.on('stack-item-updated', function({stackItem, origin, type:'undo'|'redo', changedParentTypes}, undoManager))`**\
+&#x20;   Register an event handler that is called when a `StackItem` is updated in the undo- or the redo-stack.
 
 ### **Example: Stop Capturing**
 
