@@ -22,8 +22,8 @@ const ytextNested = new Y.Text()
 ydoc.getMap('another shared structure').set('my nested text', ytextNested)
 
 // Common methods
-ytext.insert(0, 'abc') // insert three elements
-ytext.format(1, 2, { bold: true }) // delete second element 
+ytext.insert(0, 'abc') // insert 'abc' at position 0
+ytext.format(1, 2, { bold: true }) // format range 'bc' to bold
 ytext.toString() // => 'abc'
 ytext.toDelta() // => [{ insert: 'a' }, { insert: 'bc', attributes: { bold: true }}]
 ```
