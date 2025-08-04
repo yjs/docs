@@ -70,7 +70,7 @@ yarray.insert(0, ymap.get("my other array") as Y.Array) // will throw an error
 const myObject = { val: 0 }
 ymap.set(0, myObject)
 ymap.get(0).val = 1 // Doesn't throw an error, but is highly discouraged
-myobject.val = 2 // Also doesn't throw an error, but is also discouraged.
+myObject.val = 2 // Also doesn't throw an error, but is also discouraged.
 
 ```
 
