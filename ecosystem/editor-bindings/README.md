@@ -26,3 +26,6 @@ Yjs supports several popular text and rich-text editors. This works by "binding"
 [remirror.md](remirror.md)
 {% endcontent-ref %}
 
+{% content-ref url="lexical.md" %}
+[lexical.md](lexical.md)
+{% endcontent-ref %}
