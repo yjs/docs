@@ -30,7 +30,7 @@
   * [y-sweet](https://jamsocket.com/y-sweet)
   * [Liveblocks](https://liveblocks.io/yjs)
   * [SuperViz](https://docs.superviz.com/collaboration/integrations/YJS/overview)
-  * [Hocuspocus](https://tiptap.dev/docs/hocuspocus/getting-started)
+  * [Hocuspocus](https://tiptap.dev/docs/hocuspocus/getting-started/overview)
 * [Database Provider](ecosystem/database-provider/README.md)
   * [y-indexeddb](ecosystem/database-provider/y-indexeddb.md)
   * [y-leveldb](ecosystem/database-provider/y-leveldb.md)
