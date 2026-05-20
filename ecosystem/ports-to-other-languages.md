@@ -8,6 +8,10 @@ description: Yjs has been ported to other languages.
 C# port of Yjs
 {% endembed %}
 
+{% embed url="https://github.com/reearth/ygo" %}
+Go port of Yjs
+{% endembed %}
+
 ### Work in progress
 
 {% embed url="https://github.com/yjs/yrs" %}
