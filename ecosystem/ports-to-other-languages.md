@@ -16,6 +16,14 @@ A pure Go port of Yjs. Wire-compatible with the JavaScript reference (V1/V2 upda
 Go port of Yjs
 {% endembed %}
 
+## ygo (Deln0r/ygo)
+
+Pure-Go port of Yjs, byte-for-byte wire-compatible with the JavaScript reference in both V1 and V2 update formats, verified bidirectionally by a 114-scenario cross-language fixture suite against yjs@13.6.x. Hocuspocus-compatible WebSocket server, SQLite persistence, UndoManager, iOS/Android via gomobile, no CGO.
+
+{% embed url="https://github.com/Deln0r/ygo" %}
+Go port of Yjs
+{% endembed %}
+
 ### Work in progress
 
 {% embed url="https://github.com/yjs/yrs" %}
