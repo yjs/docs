@@ -12,7 +12,7 @@
 ****    The transaction in which this event was created on.
 
 **`yevent.path: Array<String|number>` **\
-****    Computes the path from the Y.Doc to the changed type. You can traverse to the changed type by calling `ydoc.get(path[0]).get(path[1]).get(path[2]).get( ..`.
+****    Computes the path from the Y.Doc to the changed type. You can traverse to the changed type by calling `yevent.currentTarget.get(path[0]).get(path[1]).get(path[2]).get( ..`.
 
 **`yevent.changes.delta: Delta`**\
 ****    Computes the changes in the array-delta format. See more in the [Delta Format ](delta-format.md)section. The text delta is only available on Y.TextEvent (`ytextEvent.delta`)
