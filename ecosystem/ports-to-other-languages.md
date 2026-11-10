@@ -18,7 +18,7 @@ Go port of Yjs
 
 ## ygo (Deln0r/ygo)
 
-Pure-Go port of Yjs, byte-for-byte wire-compatible with the JavaScript reference in both V1 and V2 update formats, verified bidirectionally by a 114-scenario cross-language fixture suite against yjs@13.6.x. Hocuspocus-compatible WebSocket server, SQLite persistence, UndoManager, iOS/Android via gomobile, no CGO.
+Pure-Go port of Yjs. Reads and writes the V1 and V2 update formats byte for byte with yjs@13.6.33, checked in both directions by 307 cross-language fixture scenarios; the README lists the few cases that differ. Includes a y-websocket-compatible WebSocket server with SQLite persistence, a Go sync client for y-websocket and Hocuspocus servers, UndoManager, and iOS/Android bindings via gomobile. No CGO.
 
 {% embed url="https://github.com/Deln0r/ygo" %}
 Go port of Yjs
